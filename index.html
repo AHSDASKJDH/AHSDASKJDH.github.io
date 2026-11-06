@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>翻斗花园 · 翻斗币规则</title>
     <style>
         * {
@@ -114,10 +117,11 @@
 
     <div class="section">
         <h2>一、币种基础介绍</h2>
-        <p class="tip-text">公会内部设有两种独立积分：<strong>翻斗金币、翻斗银币</strong>，两套账户相互独立、币值不互通。</p>
+        <p class="tip-text">公会内部设有三种独立积分：<strong>翻斗金币、翻斗银币、钻石币</strong>，三套账户相互独立、币值不互通。</p>
         <p class="tip-text">• 标识规则：以QQ号作为唯一身份标识，申请开户后自动同时开通金币账户、银币账户；玩家将自己的游戏账号归类至银币账户或金币账户。</p>
         <p class="tip-text">✅ 银币账户：萌新账号归属，仅能领取、使用翻斗银币</p>
         <p class="tip-text">✅ 金币账户：中上实力账号归属，仅能领取、使用翻斗金币</p>
+        <p class="tip-text">✅ 钻石币账户：顶级强者荣誉积分，无兑换道具，仅作为荣誉勋章</p>
         <p class="tip-text">• 账户迁移规则：游戏账号<strong>仅支持从银币账户升级转入金币账户，禁止从金币账户退回银币账户</strong>；迁移申请提交后由管理审核。</p>
         <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;迁移说明：银币账户代表萌新阶段，账号升级进入金币账户后，无法回退到银币账户。</p>
         <p class="tip-text">• 发放顺延规则：同一个玩家名下，分属不同账户的账号贡献分开统计。例如玩家大号归类在金币账户，即使大号在公会活动中满足银币发放条件，也无法领取银币，奖励名额顺延给下一位符合条件、归属银币账户的成员。</p>
@@ -140,33 +144,43 @@
         <h3>服务对象</h3>
         <p class="tip-text">激励具备一定实力的中上水平玩家，主动带萌新通关副本；大佬赚取金币后，兑换自身难以独立通关的副本权益。</p>
         <h3>获取渠道</h3>
-        <p class="tip-text">带领公会萌新通关副本，按照副本内部参考市场价发放金币。</p>
-        <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;举例：冰雪副本参考市场价为带一次1元，成功带萌新通关一次冰雪，即可获得1金币；副本参考价格会随行情调整。</p>
+        <p class="tip-text">带领公会萌新通关副本，按副本参考市场价结算：<strong>萌新消耗对应数量银币，带队玩家获得等额金币</strong>。</p>
+        <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;举例：A带了B和C两个萌新通关英雄冰雪，冰雪单次参考市场价1r，则分别消耗B、C各1银币，A一共获得2金币。</p>
+        <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;副本参考价格会随行情调整；金币月度获取上限暂时未定，后续若金币产出过多，将会增设每月金币获取上限。</p>
         <h3>金币兑换池</h3>
         <p class="tip-text">噩梦王城月本（参考价15金币/期），后续新增权益持续补充。</p>
         <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;举例：想要兑换一期噩梦王城月本（市场价15元/期），需要累计带萌新通关15次冰雪副本，攒够15金币兑换。</p>
     </div>
 
     <div class="section">
-        <h2>四、机器人指令说明（翻斗花园萌卫小妹妹）</h2>
+        <h2>四、钻石币（荣誉勋章）</h2>
+        <h3>定位说明</h3>
+        <p class="tip-text">面向公会顶级带本强者，钻石币<strong>没有兑换池、没有可兑换的道具与副本权益</strong>，仅作为荣誉标识，用来表彰带金币池里高难度副本的顶尖玩家。</p>
+        <p class="tip-text">获取规则：带领金币账户玩家通关付费副本，被带者消耗多少金币，带队强者就增加等额钻石币，逻辑和「银币消耗转化为金币」保持一致。</p>
+        <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;举例：D带E通关噩梦王城月本，本次消耗E的15金币，则D获得15钻石币。</p>
+        <p class="tip-text">钻石币发放规则后续可由管理组继续补充公示。</p>
+    </div>
+
+    <div class="section">
+        <h2>五、机器人指令说明（翻斗花园萌卫小妹妹）</h2>
         <div class="command-block">
             <p>👉 普通成员可用指令（仅查询自己账号，QQ身份校验）</p>
             <div class="command-item">查询翻斗币</div>
-            <p style="font-size:14px;margin:4px 0 12px;">发送后机器人返回当前QQ绑定账户：金币数量、银币数量、两个账户绑定的游戏角色名</p>
+            <p style="font-size:14px;margin:4px 0 12px;">发送后机器人返回当前QQ绑定账户：金币数量、银币数量、钻石币数量、两个账户绑定的游戏角色名</p>
             <p>👉 管理专用指令（增删改账户、发币、扣币、账户迁移等，权限受控）</p>
             <div class="command-item">（后续管理指令清单将单独更新发布）</div>
         </div>
     </div>
 
     <div class="section">
-        <h2>五、统一使用规则</h2>
-        <p class="tip-text warn-text">1. 翻斗金币、翻斗银币仅限翻斗花园公会内部兑换使用；<strong>严禁提现、折现、私下买卖、互相转赠</strong>。</p>
+        <h2>六、统一使用规则</h2>
+        <p class="tip-text warn-text">1. 翻斗金币、翻斗银币、钻石币仅限翻斗花园公会内部使用；<strong>严禁提现、折现、私下买卖、互相转赠</strong>。</p>
         <p class="tip-text warn-text">2. 禁止自刷、互相串通刷币值等违规行为；一经查实，公会管理有权扣除、收回对应翻斗币。</p>
         <p class="tip-text">3. 本套规则最终解释权归翻斗花园公会管理组所有。</p>
     </div>
 
     <div class="footer-note">
-        <strong>备注：</strong>翻斗金币、翻斗银币为公会玩家自制内部激励积分，与《弹弹堂3》官方无关，不属于游戏官方道具；所有兑换仅限公会内部福利发放，不构成交易行为。
+        <strong>备注：</strong>翻斗金币、翻斗银币、钻石币为公会玩家自制内部激励积分，与《弹弹堂3》官方无关，不属于游戏官方道具；所有兑换仅限公会内部福利发放，不构成交易行为。
     </div>
 </div>
 </body>
