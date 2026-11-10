@@ -16,10 +16,46 @@
         }
         body {
             background-color: #f0f4ff;
-            padding: 30px 16px;
+            padding-top: 90px;
+            padding-bottom:30px;
+            padding-left:16px;
+            padding-right:16px;
             color: #222;
             line-height: 1.7;
         }
+        /* 悬浮导航栏 */
+        .nav-fixed{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            background:#ffffff;
+            box-shadow:0 2px 8px #00000015;
+            z-index:999;
+            padding:8px 12px;
+        }
+        .nav-wrap{
+            max-width:920px;
+            margin:0 auto;
+            display:flex;
+            gap:8px;
+            flex-wrap:wrap;
+            align-items:center;
+        }
+        .nav-wrap a{
+            font-size:13px;
+            padding:4px 10px;
+            background:#e8f1ff;
+            color:#2b5cb8;
+            border-radius:6px;
+            text-decoration:none;
+            white-space:nowrap;
+        }
+        .nav-wrap a:hover{
+            background:#2b5cb8;
+            color:#ffffff;
+        }
+
         .container {
             max-width: 920px;
             margin: 0 auto;
@@ -60,6 +96,7 @@
             border-radius:12px;
             padding:20px;
             background-color:#f8fbff;
+            scroll-margin-top: 90px;
         }
         .notice-section{
             border:1px solid #ff9898;
@@ -68,6 +105,7 @@
         .notice-section h2{
             color:#c82423;
             border-left-color:#e64343;
+            scroll-margin-top: 90px;
         }
         .section h2{
             color:#2b5cb8;
@@ -75,6 +113,7 @@
             margin-bottom:14px;
             border-left:4px solid #447bdd;
             padding-left:10px;
+            scroll-margin-top: 90px;
         }
         .section h3{
             font-size:17px;
@@ -142,11 +181,26 @@
     </style>
 </head>
 <body>
+<!-- 顶部悬浮导航栏 -->
+<div class="nav-fixed">
+    <div class="nav-wrap">
+        <a href="#top">🔝回到顶部</a>
+        <a href="#notice">📢限时福利</a>
+        <a href="#chapter1">📖币种基础</a>
+        <a href="#chapter2">🥈翻斗银币</a>
+        <a href="#chapter3">🪙翻斗金币</a>
+        <a href="#chapter4">💎翻斗钻币</a>
+        <a href="#chapter5">📟机器人指令</a>
+        <a href="#chapter6">⚖️统一规则</a>
+        <a href="#pageBottom">👇页面末尾</a>
+    </div>
+</div>
+
 <script>
     // 图片根路径变量，统一在这里修改图片目录
     const IMG_BASE_PATH = "img/";
 </script>
-<div class="container">
+<div class="container" id="top">
     <div class="header-box">
         <h1>翻斗花园 · 翻斗币规则总览</h1>
         <div class="coin-row">
@@ -165,8 +219,8 @@
         </div>
     </div>
 
-    <!-- 限时福利通知模块 -->
-    <div class="section notice-section">
+    <!-- 限时福利通知模块 锚点notice -->
+    <div class="section notice-section" id="notice">
         <h2>📢 限时福利通知</h2>
         <p class="tip-text warn-text">2026年11月15日（周日）晚上24点之前，找公会QQ群管理员【3165575739】或【1023622518】创建并归类好银币账户的成员，均可发放初始银币5个。</p>
         <p class="tip-text">⚠️ 办理时只需要告诉管理员自己的账号角色名以及要归类到的账户即可，例如：顾之煜归到金币账户，公子世无双归到银币账户。</p>
@@ -174,7 +228,7 @@
         <p class="tip-text">⚠️ 逾期将不再发放本次初始银币福利，请需要的萌新及时找管理员办理开户归类！</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="chapter1">
         <h2>一、币种基础介绍</h2>
         <p class="tip-text">公会内部设有三种独立积分：<strong>翻斗金币、翻斗银币、翻斗钻币</strong>，三套账户相互独立、币值不互通。</p>
         <p class="tip-text">• 标识规则：以QQ号作为唯一身份标识，申请开户后自动同时开通银币账户、金币账户、钻币账户；玩家将自己的游戏账号归类至银币账户、金币账户或钻币账户。</p>
@@ -188,7 +242,7 @@
         <p class="tip-text">• 账户数据管理：所有账户信息存储在数据库，由Q群机器人【翻斗花园萌卫小妹妹】接收指令完成数据库操作；新增、修改、删除数据权限仅对管理开放；查询权限全员开放，<strong>仅能查询自己名下账户数据</strong>，查询依靠唯一QQ号作为身份标识。后续会统一发布查询指令清单，成员按照指定格式在群内发送指令即可查询。</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="chapter2">
         <h2>二、翻斗银币（萌新激励积分）</h2>
         <h3>服务对象</h3>
         <p class="tip-text">用于量化公会萌新在各类公会活动中的贡献，扶持萌新成长。有意参与激励计划的成员，向会长提交开户申请即可开通账户；奖励统计、银币发放，仅面向归属银币账户、平均四维不足1.8w的游戏账号；平均四维达标但留在银币账户的账号不参与银币获取。</p>
@@ -292,7 +346,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="chapter3">
         <h2>三、翻斗金币（大佬带新激励积分）</h2>
         <h3>服务对象</h3>
         <p class="tip-text">金币账户无四维门槛，任意账号都可以归入金币账户；激励玩家主动带萌新通关副本，带队玩家赚取金币后，兑换自身难以独立通关的副本权益。</p>
@@ -352,7 +406,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="chapter4">
         <h2>四、翻斗钻币（荣誉勋章）</h2>
         <h3>定位说明</h3>
         <p class="tip-text">面向公会顶级带本强者，翻斗钻币<strong>没有兑换池、没有可兑换的道具与副本权益</strong>，仅作为荣誉标识，用来表彰带金币池里高难度副本的顶尖玩家。</p>
@@ -361,7 +415,7 @@
         <p class="tip-text">钻币发放规则后续可由管理组继续补充公示。</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="chapter5">
         <h2>五、机器人指令说明（翻斗花园萌卫小妹妹）</h2>
         <div class="command-block">
             <p>👉 普通成员可用指令（仅查询/操作自己账号，QQ身份校验）</p>
@@ -385,21 +439,34 @@
             <p class="warn-text" style="font-size:14px;margin:4px 0 12px;">⚠️重要限制：不可以接自己账号发布的委托，<strong>同一QQ下无论是什么角色，均禁止接本QQ的委托，防止刷币</strong>；角色必须已经归类，同时满足对应接单账户权限。</p>
 
             <p>👉 管理员专用指令模板</p>
-            <div class="command-item">- 查询他人账户：`查询-QQ号`<br>- 增加币：`增加-QQ号-币种-数量-备注`<br>- 扣减币：`减少-QQ号-币种-数量-备注`<br>- 归类账户：`归类账户-QQ号-角色名-账户类型`<br>- 删除账户：`删除账户-QQ号-角色名-账户类型`</div>
+            <div class="command-item">- 查询他人账户：`查询-QQ号`<br>
+                - 增加币：`增加-QQ号-币种-数量-备注`<br>
+                - 扣减币：`减少-QQ号-币种-数量-备注`<br>
+                - 归类账户：`归类账户-QQ号-角色名-账户类型`<br>
+                - 删除账户：`删除账户-QQ号-角色名-账户类型`</div>
 
             <p>👉 管理员指令示例</p>
-            <div class="command-item">查询-123456789<br>增加-123456789-银币-10.50-公会争霸活动奖励<br>增加-123456789-金币-2.00-带萌新冰雪副本奖励<br>增加-123456789-钻币-15.00-带噩梦邪焰王城月本高难副本<br>减少-123456789-银币-1.27-消耗银币打冰雪副本<br>减少-123456789-金币-15.00-兑换噩梦邪焰王城月本权益<br>减少-123456789-钻币-3.00-测试扣钻币<br>归类账户-123456789-角色名2-银币账户<br>归类账户-123456789-角色名1-金币账户<br>删除账户-123456789-角色名1-银币账户</div>
+            <div class="command-item">查询-123456789<br>
+                增加-123456789-银币-10.50-公会争霸活动奖励<br>
+                增加-123456789-金币-2.00-带萌新冰雪副本奖励<br>
+                增加-123456789-钻币-15.00-带噩梦邪焰王城月本高难副本<br>
+                减少-123456789-银币-1.27-消耗银币打冰雪副本<br>
+                减少-123456789-金币-15.00-兑换噩梦邪焰王城月本权益<br>
+                减少-123456789-钻币-3.00-测试扣钻币<br>
+                归类账户-123456789-角色名2-银币账户<br>
+                归类账户-123456789-角色名1-金币账户<br>
+                删除账户-123456789-角色名1-银币账户</div>
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="chapter6">
         <h2>六、统一使用规则</h2>
         <p class="tip-text warn-text">1. 翻斗金币、翻斗银币、翻斗钻币仅限翻斗花园公会内部使用；<strong>严禁提现、折现、私下买卖、互相转赠</strong>。</p>
         <p class="tip-text warn-text">2. 禁止自刷、互相串通刷币值等违规行为；一经查实，公会管理有权扣除、收回对应翻斗币。</p>
         <p class="tip-text">3. 本套规则最终解释权归翻斗花园公会管理组所有。</p>
     </div>
 
-    <div class="footer-note">
+    <div class="footer-note" id="pageBottom">
         <strong>备注：</strong>翻斗金币、翻斗银币、翻斗钻币为公会玩家自制内部激励积分，与《弹弹堂3》官方无关，不属于游戏官方道具；所有兑换仅限公会内部福利发放，不构成交易行为。
     </div>
 </div>
