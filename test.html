@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻斗花园 · 翻斗币规则</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f0f4ff;
+            padding: 30px 16px;
+            color: #222;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px #00000018;
+            padding: 32px;
+        }
+        .header-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header-box h1 {
+            color: #2b5cb8;
+            font-size: 28px;
+            margin-bottom:12px;
+        }
+        .coin-row {
+            display: flex;
+            justify-content: center;
+            gap:40px;
+            align-items: center;
+            margin:20px 0;
+        }
+        .coin-item{
+            text-align:center;
+        }
+        .coin-item img{
+            width:120px;
+            height:120px;
+        }
+        .section{
+            margin:26px 0;
+            border:1px solid #dbe4f7;
+            border-radius:12px;
+            padding:20px;
+            background-color:#f8fbff;
+        }
+        .section h2{
+            color:#2b5cb8;
+            font-size:20px;
+            margin-bottom:14px;
+            border-left:4px solid #447bdd;
+            padding-left:10px;
+        }
+        .section h3{
+            font-size:17px;
+            margin:12px 0 8px;
+            color:#334;
+        }
+        .tip-text{
+            color:#555;
+            margin:8px 0;
+        }
+        .warn-text{
+            color:#d14343;
+        }
+        .command-block{
+            background-color:#fff6e9;
+            border:1px solid #ffd4a3;
+            border-radius:10px;
+            padding:16px;
+        }
+        .command-item{
+            background:#fff;
+            padding:8px 12px;
+            border-radius:6px;
+            margin:8px 0;
+            font-family:Consolas,monospace;
+        }
+        .footer-note{
+            margin-top:32px;
+            padding-top:16px;
+            border-top:1px solid #eee;
+            color:#666;
+            font-size:14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header-box">
+        <h1>翻斗花园 · 翻斗币规则总览</h1>
+        <div class="coin-row">
+            <div class="coin-item">
+                <img src="翻斗金币.jpeg" alt="翻斗金币">
+                <div>翻斗金币</div>
+            </div>
+            <div class="coin-item">
+                <img src="翻斗银币.png" alt="翻斗银币">
+                <div>翻斗银币</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>一、币种基础介绍</h2>
+        <p class="tip-text">公会内部设有两种独立积分：<strong>翻斗金币、翻斗银币</strong>，两套账户相互独立、币值不互通。</p>
+        <p class="tip-text">• 标识规则：以QQ号作为唯一身份标识，申请开户后自动同时开通金币账户、银币账户；玩家将自己的游戏账号归类至银币账户或金币账户。</p>
+        <p class="tip-text">✅ 银币账户：萌新账号归属，仅能领取、使用翻斗银币</p>
+        <p class="tip-text">✅ 金币账户：中上实力账号归属，仅能领取、使用翻斗金币</p>
+        <p class="tip-text">• 账户迁移规则：游戏账号<strong>仅支持从银币账户升级转入金币账户，禁止从金币账户退回银币账户</strong>；迁移申请提交后由管理审核。</p>
+        <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;迁移说明：银币账户代表萌新阶段，账号升级进入金币账户后，无法回退到银币账户。</p>
+        <p class="tip-text">• 发放顺延规则：同一个玩家名下，分属不同账户的账号贡献分开统计。例如玩家大号归类在金币账户，即使大号在公会活动中满足银币发放条件，也无法领取银币，奖励名额顺延给下一位符合条件、归属银币账户的成员。</p>
+        <p class="tip-text">• 换算参考基准：单枚翻斗金币、单枚翻斗银币参考采购成本均为1元；该基准<strong>仅作翻斗花园公会内部道具、副本权益比价换算使用</strong>，翻斗金币、银币本身无现金价值，不可兑换人民币。兑换池福利由热心人士自愿无偿提供。</p>
+        <p class="tip-text">• 账户数据管理：所有账户信息存储在数据库，由Q群机器人【翻斗花园萌卫小妹妹】接收指令完成数据库操作；新增、修改、删除数据权限仅对管理开放；查询权限全员开放，<strong>仅能查询自己名下账户数据</strong>，查询依靠唯一QQ号作为身份标识。后续会统一发布查询指令清单，成员按照指定格式在群内发送指令即可查询。</p>
+    </div>
+
+    <div class="section">
+        <h2>二、翻斗银币（萌新激励积分）</h2>
+        <h3>服务对象</h3>
+        <p class="tip-text">用于量化公会萌新在各类公会活动中的贡献，扶持萌新成长。有意参与激励计划的成员，向会长提交开户申请即可开通账户；奖励统计、银币发放，仅面向归属银币账户、已开户的游戏账号。</p>
+        <h3>获取渠道</h3>
+        <p class="tip-text">公会争霸个人积分达到1000分、萌新池内周贡献排名靠前（暂定前五）、四圣副本萌新池排名靠前、萌新池寻宝活动排名靠前（前三）、小蝎子打对数量最多；奖励名单由公会管理统计并公示。</p>
+        <h3>银币兑换池</h3>
+        <p class="tip-text">魔玉晶石、灵晶、绿灵核、紫碎、紫纹章、紫魔石、绿龙核、绿龙纹、紫刻印2星、灵玉；兑换池道具会不定期更新。</p>
+    </div>
+
+    <div class="section">
+        <h2>三、翻斗金币（大佬带新激励积分）</h2>
+        <h3>服务对象</h3>
+        <p class="tip-text">激励具备一定实力的中上水平玩家，主动带萌新通关副本；大佬赚取金币后，兑换自身难以独立通关的副本权益。</p>
+        <h3>获取渠道</h3>
+        <p class="tip-text">带领公会萌新通关副本，按照副本内部参考市场价发放金币。</p>
+        <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;举例：冰雪副本参考市场价为带一次1元，成功带萌新通关一次冰雪，即可获得1金币；副本参考价格会随行情调整。</p>
+        <h3>金币兑换池</h3>
+        <p class="tip-text">噩梦王城月本（参考价15金币/期），后续新增权益持续补充。</p>
+        <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;举例：想要兑换一期噩梦王城月本（市场价15元/期），需要累计带萌新通关15次冰雪副本，攒够15金币兑换。</p>
+    </div>
+
+    <div class="section">
+        <h2>四、机器人指令说明（翻斗花园萌卫小妹妹）</h2>
+        <div class="command-block">
+            <p>👉 普通成员可用指令（仅查询自己账号，QQ身份校验）</p>
+            <div class="command-item">查询翻斗币</div>
+            <p style="font-size:14px;margin:4px 0 12px;">发送后机器人返回当前QQ绑定账户：金币数量、银币数量、两个账户绑定的游戏角色名</p>
+            <p>👉 管理专用指令（增删改账户、发币、扣币、账户迁移等，权限受控）</p>
+            <div class="command-item">（后续管理指令清单将单独更新发布）</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>五、统一使用规则</h2>
+        <p class="tip-text warn-text">1. 翻斗金币、翻斗银币仅限翻斗花园公会内部兑换使用；<strong>严禁提现、折现、私下买卖、互相转赠</strong>。</p>
+        <p class="tip-text warn-text">2. 禁止自刷、互相串通刷币值等违规行为；一经查实，公会管理有权扣除、收回对应翻斗币。</p>
+        <p class="tip-text">3. 本套规则最终解释权归翻斗花园公会管理组所有。</p>
+    </div>
+
+    <div class="footer-note">
+        <strong>备注：</strong>翻斗金币、翻斗银币为公会玩家自制内部激励积分，与《弹弹堂3》官方无关，不属于游戏官方道具；所有兑换仅限公会内部福利发放，不构成交易行为。
+    </div>
+</div>
+</body>
+</html>
