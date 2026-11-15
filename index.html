@@ -335,16 +335,15 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" onerror="window.XLSX_LOAD_FAILED=true"></script>
 <script>
     const IMG_BASE_PATH = "img/";
     const RANK_IMG_BASE = "./rank/";
 
     const DATA_FILES = {
-        diamond: { file: "./rank/钻石币排行榜-导出数据.xlsx", coin: "钻石币", icon:"翻斗钻币.png" },
-        sponsor: { file: "./rank/赞助池排行榜-导出数据.xlsx", coin: "赞助价值", icon:"" },
-        silver: { file: "./rank/银币排行榜-导出数据.xlsx", coin: "银币", icon:"翻斗银币.png" },
-        gold: { file: "./rank/金币排行榜-导出数据.xlsx", coin: "金币", icon:"翻斗金币.png" }
+        diamond: { file: "./rank/钻石币排行榜-导出数据.csv", coin: "钻石币", icon:"翻斗钻币.png" },
+        sponsor: { file: "./rank/赞助池排行榜-导出数据.csv", coin: "赞助价值", icon:"" },
+        silver: { file: "./rank/银币排行榜-导出数据.csv", coin: "银币", icon:"翻斗银币.png" },
+        gold: { file: "./rank/金币排行榜-导出数据.csv", coin: "金币", icon:"翻斗金币.png" }
     };
 </script>
 
@@ -379,33 +378,33 @@
         <h2>📊 排行榜看板（自动读取导出数据）</h2>
         <p class="board-desc">
             顺序固定：<strong>钻石账户榜 → 赞助池榜 → 银币余额榜 → 金币余额榜</strong>。
-            页面会自动读取同目录下rank文件夹内的导出 Excel，<strong>所有余额大于0全部展示，无条数上限</strong>；导出的表直接覆盖旧文件后刷新页面即可更新。
+            页面会自动读取同目录下rank文件夹内的导出 CSV（也可手动选择/拖入），<strong>所有余额大于0全部展示，无条数上限</strong>；导出的表直接覆盖旧文件后刷新页面即可更新。
         </p>
         <div class="data-bar">
             <span id="dataStatus">正在读取数据…</span>
             <button id="btnReload" class="ghost-btn" type="button">🔄 重新读取</button>
-            <button id="btnPick" type="button">📂 手动选择 Excel</button>
-            <span style="color:#8a97ad;">（打不开本地文件时，可点“手动选择”或把 Excel 拖进本页）</span>
-            <input id="filePicker" class="file-input-hidden" type="file" multiple accept=".xlsx,.xls,.csv">
+            <button id="btnPick" type="button">📂 手动选择 CSV</button>
+            <span style="color:#8a97ad;">（打不开本地文件时，可点“手动选择”或把 CSV 拖进本页）</span>
+            <input id="filePicker" class="file-input-hidden" type="file" multiple accept=".csv,.xlsx,.xls">
         </div>
         <div class="board-card" id="boardDiamond">
             <div class="board-title">💎 钻石账户榜<span class="board-badge">按钻石币余额排名</span></div>
-            <div class="board-meta">数据源：钻石币排行榜-导出数据.xlsx</div>
+            <div class="board-meta">数据源：钻石币排行榜-导出数据.csv</div>
             <div class="board-body"></div>
         </div>
         <div class="board-card" id="boardSponsor">
             <div class="board-title">🎁 赞助池榜<span class="board-badge">按赞助价值排名</span></div>
-            <div class="board-meta">数据源：赞助池排行榜-导出数据.xlsx（可选，没有就显示空榜）</div>
+            <div class="board-meta">数据源：赞助池排行榜-导出数据.csv（可选，没有就显示空榜）</div>
             <div class="board-body"></div>
         </div>
         <div class="board-card" id="boardSilver">
             <div class="board-title">🥈 银币余额榜<span class="board-badge">按银币余额排名</span></div>
-            <div class="board-meta">数据源：银币排行榜-导出数据.xlsx</div>
+            <div class="board-meta">数据源：银币排行榜-导出数据.csv</div>
             <div class="board-body"></div>
         </div>
         <div class="board-card" id="boardGold">
             <div class="board-title">🪙 金币余额榜<span class="board-badge">按金币余额排名</span></div>
-            <div class="board-meta">数据源：金币排行榜-导出数据.xlsx</div>
+            <div class="board-meta">数据源：金币排行榜-导出数据.csv</div>
             <div class="board-body"></div>
         </div>
     </div>
@@ -700,149 +699,176 @@
         const n = Number(v) || 0;
         return n.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
+    function splitRoles(roles) {
+        return String(roles || '').split(/[,，、|]/).map(s => s.trim()).filter(Boolean);
+    }
     function shortName(roles) {
-        const arr = String(roles || '').split(/[,，、]/).map(s => s.trim()).filter(Boolean);
+        const arr = splitRoles(roles);
         if (!arr.length) return '(未绑定角色)';
         return arr.length === 1 ? arr[0] : arr[0] + ' 等' + arr.length + '人';
     }
     function fullRoles(roles) {
-        const arr = String(roles || '').split(/[,，、]/).map(s => s.trim()).filter(Boolean);
+        const arr = splitRoles(roles);
         return arr.length ? arr.join('、') : '(未绑定角色)';
     }
 
-    function parseSheetRows(wb) {
-        for (const sheetName of wb.SheetNames) {
-            const aoa = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1, defval: '', raw: true });
-            for (let i = 0; i < Math.min(aoa.length, 12); i++) {
-                const row = (aoa[i] || []).map(v => String(v == null ? '' : v).trim());
-                const lower = row.map(v => v.toLowerCase());
-                const qqIdx = lower.indexOf('qq');
-                const balIdx = row.findIndex(v => v.indexOf('余额') >= 0);
-                const roleIdx = row.findIndex(v => v.indexOf('角色名') >= 0);
-                if (qqIdx >= 0 && balIdx >= 0) {
-                    const body = aoa.slice(i + 1).filter(r => String(r[qqIdx]==null?'':r[qqIdx]).trim()!=='');
-                    return {
-                        qqIdx, balIdx, roleIdx: roleIdx>=0?roleIdx:-1,
-                        balanceHeader: row[balIdx]||'',
-                        rows: body.map(r=>({
-                            qq: String(r[qqIdx]==null?'':r[qqIdx]).trim(),
-                            balance: Number(r[balIdx])||0,
-                            roles: roleIdx>=0?String(r[roleIdx]==null?'':r[roleIdx]).trim():''
-                        }))
-                    };
+    // 单行CSV切分，支持双引号包裹、字段内逗号、转义双引号
+    function splitCsvLine(line) {
+        const out = [];
+        let cur = '';
+        let inQuote = false;
+        for (let i = 0; i < line.length; i++) {
+            const c = line[i];
+            if (inQuote) {
+                if (c === '"') {
+                    if (line[i + 1] === '"') { cur += '"'; i++; }
+                    else { inQuote = false; }
+                } else {
+                    cur += c;
                 }
+            } else {
+                if (c === '"') inQuote = true;
+                else if (c === ',') { out.push(cur); cur = ''; }
+                else cur += c;
             }
         }
-        return null;
+        out.push(cur);
+        return out;
+    }
+
+    // CSV解析：表头模糊匹配 qq / 含"余额"(或"价值") / 含"角色"
+    function parseCsv(text) {
+        const clean = String(text || '').replace(/^\uFEFF/, '');
+        const lines = clean.split(/\r?\n/).filter(l => l.trim() !== '');
+        if (lines.length < 2) return null;
+
+        const header = splitCsvLine(lines[0]).map(h => h.trim());
+        const low = header.map(h => h.toLowerCase());
+
+        let qqIdx = low.findIndex(h => h === 'qq' || h === 'qq号' || h === '账号');
+        if (qqIdx < 0) qqIdx = 0;
+        let balIdx = header.findIndex(h => h.indexOf('余额') >= 0);
+        if (balIdx < 0) balIdx = header.findIndex(h => h.indexOf('价值') >= 0);
+        if (balIdx < 0) balIdx = header.findIndex(h => h.indexOf('数量') >= 0);
+        let roleIdx = header.findIndex(h => h.indexOf('角色') >= 0);
+        if (balIdx < 0) return null;
+
+        const rows = [];
+        for (let i = 1; i < lines.length; i++) {
+            const cells = splitCsvLine(lines[i]);
+            if (!cells.length) continue;
+            const qq = String(cells[qqIdx] == null ? '' : cells[qqIdx]).trim();
+            if (!qq) continue;
+            rows.push({
+                qq,
+                balance: parseFloat(String(cells[balIdx] == null ? '' : cells[balIdx]).replace(/[^\d.\-]/g, '')) || 0,
+                roles: roleIdx >= 0 ? String(cells[roleIdx] == null ? '' : cells[roleIdx]).trim() : ''
+            });
+        }
+        return { rows, balanceHeader: header[balIdx] || '' };
     }
 
     function buildRank(parsed) {
         const rows = parsed.rows
-            .filter(r=>r.balance>0)
-            .sort((a,b)=>b.balance - a.balance)
-            .map((r,i)=>({
-                rank:i+1,
-                qq:r.qq,
-                balance:r.balance,
-                name:shortName(r.roles),
-                roles:fullRoles(r.roles)
+            .filter(r => r.balance > 0)
+            .sort((a, b) => b.balance - a.balance)
+            .map((r, i) => ({
+                rank: i + 1,
+                qq: r.qq,
+                balance: r.balance,
+                name: shortName(r.roles),
+                roles: fullRoles(r.roles)
             }));
-        const total = rows.reduce((s,r)=>s+r.balance,0);
-        return {rows,total,balanceHeader:parsed.balanceHeader};
+        const total = rows.reduce((s, r) => s + r.balance, 0);
+        return { rows, total, balanceHeader: parsed.balanceHeader };
     }
 
-    async function readFileToRank(file) {
-        if(window.XLSX_LOAD_FAILED || typeof XLSX==='undefined') throw new Error('解析库未加载（无法访问外网 CDN）');
-        const buf = await file.arrayBuffer();
-        const wb = XLSX.read(buf, {type:'array'});
-        const parsed = parseSheetRows(wb);
-        if(!parsed) throw new Error('未找到表头（需要包含 qq 与「余额」列）');
+    async function readCsvFile(file) {
+        const text = await file.text();
+        const parsed = parseCsv(text);
+        if (!parsed || !parsed.rows.length) throw new Error('CSV表头无法识别（需含 qq、余额、角色名 列）');
         return buildRank(parsed);
     }
 
     function guessKey(name) {
-        if(name.indexOf('钻石')>=0) return 'diamond';
-        if(name.indexOf('赞助')>=0) return 'sponsor';
-        if(name.indexOf('金币')>=0) return 'gold';
-        if(name.indexOf('银币')>=0) return 'silver';
+        if (name.indexOf('钻石') >= 0) return 'diamond';
+        if (name.indexOf('赞助') >= 0) return 'sponsor';
+        if (name.indexOf('金币') >= 0) return 'gold';
+        if (name.indexOf('银币') >= 0) return 'silver';
         return null;
     }
 
     async function handleFiles(fileList) {
-        const files = Array.from(fileList||[]);
-        let loaded=0;
-        for(const f of files){
+        const files = Array.from(fileList || []);
+        let loaded = 0;
+        for (const f of files) {
             const key = guessKey(f.name);
-            if(!key) continue;
-            try{
-                state[key] = await readFileToRank(f);
+            if (!key) continue;
+            try {
+                state[key] = await readCsvFile(f);
                 loaded++;
-            }catch(err){console.warn('读取失败',f.name,err);}
+            } catch (err) {
+                console.warn('读取失败', f.name, err);
+            }
         }
-        if(loaded) renderAll(true);
-        else alert('没有识别到可用的 Excel（文件名需含 银币/金币/钻石/赞助）');
+        if (loaded) renderAll(true);
+        else alert('没有识别到可用CSV（文件名需包含 银币/金币/钻石/赞助）');
     }
 
     async function tryFetchOne(obj) {
-        const paths = [obj.file, encodeURIComponent(obj.file)];
-        for(const p of paths){
-            try{
-                const res = await fetch(p, {cache:'no-store'});
-                if(!res.ok) continue;
-                const blob = await res.blob();
-                if(!blob.size) continue;
-                const file = new File([blob], obj.file);
-                return await readFileToRank(file);
-            }catch(e){}
+        try {
+            const res = await fetch(obj.file, { cache: 'no-store' });
+            if (!res.ok) return null;
+            const text = await res.text();
+            const parsed = parseCsv(text);
+            if (!parsed || !parsed.rows.length) return null;
+            return buildRank(parsed);
+        } catch (e) {
+            return null;
         }
-        return null;
     }
 
     async function loadAll(manual) {
-        if(typeof XLSX==='undefined' && !window.XLSX_LOAD_FAILED){
-            setTimeout(()=>loadAll(manual),400);
-            return;
-        }
-        statusEl.innerHTML = '正在读取数据…';
-        const keys = ['diamond','silver','gold'];
+        statusEl.innerHTML = '正在读取 CSV 数据…';
+        const keys = ['diamond', 'silver', 'gold'];
         const extras = ['sponsor'];
-        for(const k of keys) state[k] = await tryFetchOne(DATA_FILES[k]);
-        for(const k of extras) if(!state[k]) state[k] = await tryFetchOne(DATA_FILES[k]);
+        for (const k of keys) state[k] = await tryFetchOne(DATA_FILES[k]);
+        for (const k of extras) if (!state[k]) state[k] = await tryFetchOne(DATA_FILES[k]);
         renderAll(manual);
     }
 
-    function escapeHtml(s){
-        return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function escapeHtml(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     }
 
     function renderEmpty(key) {
-        const tip = key==='sponsor'
-            ?'暂无赞助池数据：把「赞助池排行榜-导出数据.xlsx」放到同目录（或手动选择），表头需包含 赞助人/角色名 与 赞助价值（或 数量、单价）'
-            :'暂无数据：请确认「'+DATA_FILES[key].file+'」与网页在同一个目录，或点上方「手动选择 Excel」';
-        return '<div class="board-empty">'+tip+'</div>';
+        const tip = key === 'sponsor'
+            ? '暂无赞助池数据：把「赞助池排行榜-导出数据.csv」放到同目录（或手动选择），表头需包含 qq、余额、角色名'
+            : '暂无数据：请确认「' + DATA_FILES[key].file + '」与网页在同一个目录，或点上方「手动选择 CSV」';
+        return '<div class="board-empty">' + tip + '</div>';
     }
 
     function renderTable(data) {
         const head = '<tr><th>排名</th><th>角色名</th><th>QQ</th><th>余额</th><th>角色名（全部）</th></tr>';
-        const rows = data.rows.map(r=>{
-            const cls = r.rank<=3 ? ' class="rank-'+r.rank+'"' : '';
-            return '<tr'+cls+'>'
-                +'<td class="cell-rank">'+r.rank+'</td>'
-                +'<td class="cell-name">'+escapeHtml(r.name)+'</td>'
-                +'<td class="cell-qq">'+escapeHtml(r.qq)+'</td>'
-                +'<td class="cell-balance">'+fmtNum(r.balance)+'</td>'
-                +'<td class="cell-roles">'+escapeHtml(r.roles)+'</td>'
-                +'</tr>';
+        const rows = data.rows.map(r => {
+            const cls = r.rank <= 3 ? ' class="rank-' + r.rank + '"' : '';
+            return '<tr' + cls + '>'
+                + '<td class="cell-rank">' + r.rank + '</td>'
+                + '<td class="cell-name">' + escapeHtml(r.name) + '</td>'
+                + '<td class="cell-qq">' + escapeHtml(r.qq) + '</td>'
+                + '<td class="cell-balance">' + fmtNum(r.balance) + '</td>'
+                + '<td class="cell-roles">' + escapeHtml(r.roles) + '</td>'
+                + '</tr>';
         }).join('');
-        return '<div class="rank-table-wrap"><table class="rank-table"><thead>'+head+'</thead><tbody>'+rows+'</tbody></table></div>';
+        return '<div class="rank-table-wrap"><table class="rank-table"><thead>' + head + '</thead><tbody>' + rows + '</tbody></table></div>';
     }
 
-    function niceMax(v){
-        if(!isFinite(v)||v<=0) return 1;
+    function niceMax(v) {
+        if (!isFinite(v) || v <= 0) return 1;
         const pow = Math.pow(10, Math.floor(Math.log10(v)));
-        const steps = [1,1.2,1.5,2,2.5,3,4,5,6,8,10];
-        for(const s of steps) if(v <= pow*s) return pow*s;
-        return pow*10;
+        const steps = [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+        for (const s of steps) if (v <= pow * s) return pow * s;
+        return pow * 10;
     }
 
     function renderChart(data, title, unitLabel, iconFileName) {
@@ -856,79 +882,75 @@
         const W = 940;
         const H = padTop + n * rowH + padBottom;
         const plotW = W - labelW - valueW;
-        const maxV = niceMax(Math.max.apply(null, rows.map(r=>r.balance)));
-        const x = v => labelW + (v/maxV)*plotW;
+        const maxV = niceMax(Math.max.apply(null, rows.map(r => r.balance)));
+        const x = v => labelW + (v / maxV) * plotW;
         const ticks = 5;
-        const randId = Math.random().toString(36).slice(2,7);
+        const randId = Math.random().toString(36).slice(2, 7);
 
-        let svg = '<svg class="chart-svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMin meet" role="img" aria-label="'+escapeHtml(title)+'">';
-        svg += '<defs><linearGradient id="barGrad_'+randId+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4f8ef7"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient></defs>';
-        svg += '<text x="'+(W/2)+'" y="32" text-anchor="middle" font-size="22" font-weight="bold" fill="#20406f">'+escapeHtml(title)+'</text>';
-        svg += '<text x="'+(W/2)+'" y="58" text-anchor="middle" font-size="13" fill="#6b7a99">'+escapeHtml(unitLabel)+'</text>';
+        let svg = '<svg class="chart-svg" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMin meet" role="img" aria-label="' + escapeHtml(title) + '">';
+        svg += '<defs><linearGradient id="barGrad_' + randId + '" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4f8ef7"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient></defs>';
+        svg += '<text x="' + (W / 2) + '" y="32" text-anchor="middle" font-size="22" font-weight="bold" fill="#20406f">' + escapeHtml(title) + '</text>';
+        svg += '<text x="' + (W / 2) + '" y="58" text-anchor="middle" font-size="13" fill="#6b7a99">' + escapeHtml(unitLabel) + '</text>';
 
-        for(let t=0;t<=ticks;t++){
-            const v = (maxV/ticks)*t;
+        for (let t = 0; t <= ticks; t++) {
+            const v = (maxV / ticks) * t;
             const px = x(v);
-            svg += '<line x1="'+px+'" y1="'+(padTop-16)+'" x2="'+px+'" y2="'+(padTop+n*rowH)+'" stroke="#e3eaf4" stroke-width="1"/>';
-            svg += '<text x="'+px+'" y="'+(padTop-22)+'" text-anchor="middle" font-size="12" fill="#8894a8">'+v.toFixed(2)+'</text>';
+            svg += '<line x1="' + px + '" y1="' + (padTop - 16) + '" x2="' + px + '" y2="' + (padTop + n * rowH) + '" stroke="#e3eaf4" stroke-width="1"/>';
+            svg += '<text x="' + px + '" y="' + (padTop - 22) + '" text-anchor="middle" font-size="12" fill="#8894a8">' + v.toFixed(2) + '</text>';
         }
 
-        rows.forEach((r,i)=>{
-            const y = padTop + i*rowH;
+        rows.forEach((r, i) => {
+            const y = padTop + i * rowH;
             const bh = rowH - 8;
-            const w = Math.max(1, x(r.balance)-labelW);
-            svg += '<rect x="'+labelW+'" y="'+(y+2)+'" width="'+w+'" height="'+bh+'" fill="url(#barGrad_'+randId+')" rx="1"/>';
-            svg += '<text x="'+(labelW-10)+'" y="'+(y+bh/2+2)+'" text-anchor="end" font-size="13" fill="#1f2937">'+escapeHtml(r.name)+'</text>';
-            svg += '<text x="'+(labelW+w+8)+'" y="'+(y+bh/2+2)+'" font-size="13" fill="#1f2937" font-weight="bold">'+r.balance.toFixed(2)+'</text>';
+            const w = Math.max(1, x(r.balance) - labelW);
+            svg += '<rect x="' + labelW + '" y="' + (y + 2) + '" width="' + w + '" height="' + bh + '" fill="url(#barGrad_' + randId + ')" rx="1"/>';
+            svg += '<text x="' + (labelW - 10) + '" y="' + (y + bh / 2 + 2) + '" text-anchor="end" font-size="13" fill="#1f2937">' + escapeHtml(r.name) + '</text>';
+            svg += '<text x="' + (labelW + w + 8) + '" y="' + (y + bh / 2 + 2) + '" font-size="13" fill="#1f2937" font-weight="bold">' + r.balance.toFixed(2) + '</text>';
         });
 
-        svg += '<line x1="'+labelW+'" y1="'+(padTop-16)+'" x2="'+labelW+'" y2="'+(padTop+n*rowH)+'" stroke="#b9c7dc" stroke-width="1"/>';
-        if(iconFileName){
+        svg += '<line x1="' + labelW + '" y1="' + (padTop - 16) + '" x2="' + labelW + '" y2="' + (padTop + n * rowH) + '" stroke="#b9c7dc" stroke-width="1"/>';
+        if (iconFileName) {
             const imgSrc = RANK_IMG_BASE + iconFileName;
-            svg += '<image href="'+escapeHtml(imgSrc)+'" x="'+(W-70)+'" y="'+(H-42)+'" width="36" height="36"/>';
+            svg += '<image href="' + escapeHtml(imgSrc) + '" x="' + (W - 70) + '" y="' + (H - 42) + '" width="36" height="36"/>';
         }
         svg += '</svg>';
-        return '<div class="chart-box">'+svg+'</div>';
+        return '<div class="chart-box">' + svg + '</div>';
     }
 
     function renderAll(isManual) {
         const now = new Date();
-        const loadedList = [];
-        BOARDS.forEach(b=>{
+        BOARDS.forEach(b => {
             const data = state[b.key];
-            const card = document.querySelector(b.anchor+' .board-body');
-            const iconFile = DATA_FILES[b.key].icon||'';
-            if(data && data.rows.length>0){
+            const card = document.querySelector(b.anchor + ' .board-body');
+            const iconFile = DATA_FILES[b.key].icon || '';
+            if (data && data.rows.length > 0) {
                 card.innerHTML = renderTable(data) + renderChart(data, b.title, b.coinLabel, iconFile);
-                loadedList.push(b.title.replace('翻斗','').replace('排行榜','')||b.key);
-            }else{
+            } else {
                 card.innerHTML = renderEmpty(b.key);
             }
-            const meta = document.querySelector(b.anchor+' .board-meta');
-            if(meta){
+            const meta = document.querySelector(b.anchor + ' .board-meta');
+            if (meta) {
                 const src = DATA_FILES[b.key] ? DATA_FILES[b.key].file : '';
-                meta.innerHTML = '数据源：'+src
-                    +(data ? ' ｜ 已加载 '+data.rows.length+' 条 ｜ 更新于 '+now.toLocaleString('zh-CN',{hour12:false}) : ' ｜ 未加载');
+                meta.innerHTML = '数据源：' + src
+                    + (data ? ' ｜ 已加载 ' + data.rows.length + ' 条 ｜ 更新于 ' + now.toLocaleString('zh-CN', { hour12: false }) : ' ｜ 未加载');
             }
         });
 
-        const okCount = BOARDS.filter(b=>state[b.key]&&state[b.key].rows.length>0).length;
-        statusEl.innerHTML = '<span class="status-dot '+(okCount?'dot-ok':'dot-none')+'"></span>'
-            +'已读取 '+okCount+' / 4 个榜单'
-            +(isManual?'（手动导入）':'')
-            +' ｜ 读取时间 '+now.toLocaleTimeString('zh-CN', {hour12:false});
+        const okCount = BOARDS.filter(b => state[b.key] && state[b.key].rows.length > 0).length;
+        statusEl.innerHTML = '<span class="status-dot ' + (okCount ? 'dot-ok' : 'dot-none') + '"></span>'
+            + '已读取 ' + okCount + ' / 4 个榜单'
+            + (isManual ? '（手动导入）' : '')
+            + ' ｜ 读取时间 ' + now.toLocaleTimeString('zh-CN', { hour12: false });
     }
 
-    // 图片路径批量替换
-    document.querySelectorAll('img[data-src]').forEach(img=>{
+    document.querySelectorAll('img[data-src]').forEach(img => {
         img.src = IMG_BASE_PATH + img.dataset.src;
-        img.onerror = function(){ this.style.visibility='hidden'; };
+        img.onerror = function () { this.style.visibility = 'hidden'; };
     });
 
-    window.addEventListener('load', ()=>{
+    window.addEventListener('load', () => {
         loadAll(false);
     });
-
 </script>
 </body>
 </html>
