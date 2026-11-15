@@ -940,7 +940,8 @@ const RANK_DATA_INLINE = {
         img.onerror = function(){ this.style.visibility='hidden'; };
     });
 
-    window.addEventListener('load', ()=>{
+    // DOM解析完成立刻渲染，不等待图片全部加载完毕，解决后台标签页卡住
+    document.addEventListener('DOMContentLoaded', ()=>{
         try {
             console.time("全部渲染耗时");
 
@@ -969,6 +970,22 @@ const RANK_DATA_INLINE = {
             console.error("渲染异常：", err);
         }
     });
+
+    // 兜底：极端情况下DOMContentLoaded没有触发，最多3秒强制执行渲染
+    setTimeout(()=>{
+        if (!state.diamond) {
+            console.warn("DOM事件未触发，执行兜底强制渲染");
+            try{
+                state.diamond = buildRank({rows: RANK_DATA_INLINE.diamond.rows || []});
+                state.silver = buildRank({rows: RANK_DATA_INLINE.silver.rows || []});
+                state.gold = buildRank({rows: RANK_DATA_INLINE.gold.rows || []});
+                state.sponsor = buildRank({rows: RANK_DATA_INLINE.sponsor.rows || []});
+                renderAll();
+            }catch(e){
+                console.error("兜底渲染失败", e);
+            }
+        }
+    }, 3000);
 </script>
 </body>
 </html>
