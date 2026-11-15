@@ -1,0 +1,14 @@
+# IDEA配置，全部忽略
+.idea/
+*.iml
+# java后端源码全部忽略
+src/
+target/
+out/
+build/
+# git本身不要忽略
+!.gitignore
+# 只保留根目录index.html，其他文件都不提交
+/*
+!/index.html
+!.gitignore
