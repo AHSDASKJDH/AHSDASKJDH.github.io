@@ -1,14 +1,13 @@
-# IDEA配置，全部忽略
+# IDEA、系统缓存
 .idea/
+.vscode/
 *.iml
-# java后端源码全部忽略
-src/
-target/
-out/
-build/
-# git本身不要忽略
-!.gitignore
-# 只保留根目录index.html，其他文件都不提交
-/*
-!/index.html
-!.gitignore
+.DS_Store
+Thumbs.db
+
+# 日志、Excel、数据库导出、临时文件
+*.xlsx
+*.csv
+*.log
+*.sql
+/tmp/
