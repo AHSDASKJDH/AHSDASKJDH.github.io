@@ -523,6 +523,7 @@
     </div>
 
     <!-- 🔧交互式指令生成器模块 -->
+    <!-- 🔧交互式指令生成器模块 -->
     <div class="section" id="cmdBuilder">
         <h2>🔧 交互式指令生成器</h2>
         <p class="tip-text">选择类型、填写信息，自动生成机器人指令，点击复制后发送到QQ群供机器人识别。<span class="cmd-highlight">⚠️标记为高频常用指令</span></p>
@@ -553,25 +554,14 @@
             <div class="cmd-form-row">
                 <label for="cbDungeon">副本名称：</label>
                 <select id="cbDungeon">
-                    <option value="冰封雪域">冰封雪域（英雄冰雪）</option>
-                    <option value="唤季逐灵">唤季逐灵（英雄蛇本）</option>
-                    <option value="噩梦焦土废墟">噩梦焦土废墟</option>
-                    <option value="英雄焦土废墟">英雄焦土废墟</option>
-                    <option value="噩梦团队协作">噩梦团队协作(老团)</option>
-                    <option value="双人秘境 560 分">双人秘境 560 分</option>
-                    <option value="双人秘境 580 分">双人秘境 580 分</option>
-                    <option value="噩梦邪焰王城月本">噩梦邪焰王城月本</option>
-                    <option value="噩梦黑暗绝境月本核心队伍">噩梦黑暗绝境月本核心队伍</option>
-                    <option value="噩梦黑暗绝境月本辅助队伍">噩梦黑暗绝境月本辅助队伍</option>
+                    <!-- JS动态渲染副本选项 -->
                 </select>
             </div>
-            <!-- 新增备注栏 -->
             <div class="cmd-form-row">
                 <label for="cbRemark">备注(选填)：</label>
                 <input type="text" id="cbRemark" placeholder="可填写指定给谁接，防止其他人误接">
             </div>
         </div>
-
 
         <div id="panelReqGoods" class="cmd-hidden">
             <p class="tip-text warn-text">⚠️生成后复制指令发给管理员QQ：<strong>3165575739</strong>进行道具兑换</p>
@@ -586,10 +576,7 @@
             <div class="cmd-form-row">
                 <label for="gdItemSel">道具名称：</label>
                 <select id="gdItemSel">
-                    <option value="魔玉晶石">魔玉晶石</option>
-                    <option value="灵晶">灵晶</option>
-                    <option value="魂晶">魂晶</option>
-                    <option value="盛牡丹·普通">盛牡丹·普通</option>
+                    <!-- JS动态渲染 -->
                 </select>
             </div>
             <div class="cmd-form-row">
@@ -627,17 +614,6 @@
             </div>
         </div>
 
-        <div id="panelItemPrice" class="cmd-hidden">
-            <div class="cmd-form-row">
-                <label for="priceItemSel">道具名称：</label>
-                <select id="priceItemSel">
-                    <option value="魔玉晶石">魔玉晶石</option>
-                    <option value="灵晶">灵晶</option>
-                    <option value="魂晶">魂晶</option>
-                    <option value="盛牡丹·普通">盛牡丹·普通</option>
-                </select>
-            </div>
-        </div>
         <div id="panelSponsorQq" class="cmd-hidden">
             <div class="cmd-form-row">
                 <label for="spQq">QQ号：</label>
@@ -656,14 +632,19 @@
                 <input type="text" id="batchId" placeholder="批次ID">
             </div>
         </div>
+        <div id="panelItemPrice" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="priceItemSel">道具名称：</label>
+                <select id="priceItemSel">
+                    <!-- JS动态渲染 -->
+                </select>
+            </div>
+        </div>
         <div id="panelFlowItem" class="cmd-hidden">
             <div class="cmd-form-row">
                 <label for="flowItemSel">道具名称：</label>
                 <select id="flowItemSel">
-                    <option value="魔玉晶石">魔玉晶石</option>
-                    <option value="灵晶">灵晶</option>
-                    <option value="魂晶">魂晶</option>
-                    <option value="盛牡丹·普通">盛牡丹·普通</option>
+                    <!-- JS动态渲染 -->
                 </select>
             </div>
         </div>
@@ -692,6 +673,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="section" id="chapter5">
         <h2>五、机器人指令说明（翻斗花园萌卫小妹妹）</h2>
@@ -742,6 +724,32 @@
 
 <script src="./data-output.js"></script>
 <script>
+    // 动态渲染副本下拉
+    function renderDungeonSelect(){
+        const sel = document.getElementById('cbDungeon');
+        if(!sel || !window.DICT_DUNGEONS) return;
+        sel.innerHTML = '';
+        DICT_DUNGEONS.forEach(d=>{
+            const opt = document.createElement('option');
+            opt.value = d.value;
+            opt.textContent = d.label;
+            sel.appendChild(opt);
+        });
+    }
+
+    //动态渲染道具下拉，传入select的id
+    function renderItemSelect(selectId){
+        const sel = document.getElementById(selectId);
+        if(!sel || !window.DICT_ITEMS) return;
+        sel.innerHTML = '';
+        DICT_ITEMS.forEach(it=>{
+            const opt = document.createElement('option');
+            opt.value = it.value;
+            opt.textContent = it.label;
+            sel.appendChild(opt);
+        });
+    }
+
     const ITEM_IMAGE_MAP = {
         "魔玉晶石":"魔玉晶石.png",
         "灵晶":"灵晶.png",
@@ -782,6 +790,7 @@
         { key: 'gold',    anchor: '#boardGold',    title: '翻斗金币排行榜', coinLabel: '金币余额' }
     ];
     const state = { diamond: null, sponsor: null, silver: null, gold: null };
+
 
     function fmtNum(v) {
         const n = Number(v) || 0;
@@ -942,15 +951,37 @@
         img.onerror = function(){ this.style.visibility='hidden'; };
     });
 
-    document.addEventListener('DOMContentLoaded', ()=>{
+    // DOM只完成HTML解析，不代表外部js加载完；改用window.onload等待全部资源加载完毕
+    window.addEventListener('load', ()=>{
         try {
+            // 渲染副本、道具下拉
+            renderDungeonSelect();
+            renderItemSelect('gdItemSel');
+            renderItemSelect('priceItemSel');
+            renderItemSelect('flowItemSel');
+
             state.diamond = buildRank({rows: RANK_DATA_INLINE.diamond.rows || []});
             state.silver = buildRank({rows: RANK_DATA_INLINE.silver.rows || []});
             state.gold = buildRank({rows: RANK_DATA_INLINE.gold.rows || []});
             state.sponsor = buildRank({rows: RANK_DATA_INLINE.sponsor.rows || []});
             renderAll();
-        } catch(err){ console.error(err); }
+        } catch(err){
+            console.error(err);
+        }
     });
+    setTimeout(()=>{
+        //兜底重试渲染下拉
+        if(window.DICT_DUNGEONS && window.DICT_ITEMS){
+            renderDungeonSelect();
+            renderItemSelect('gdItemSel');
+            renderItemSelect('priceItemSel');
+            renderItemSelect('flowItemSel');
+        }
+    },1200);
+
+
+
+
 
     setTimeout(()=>{
         if (!state.diamond) {
