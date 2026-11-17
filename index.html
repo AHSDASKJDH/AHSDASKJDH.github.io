@@ -96,15 +96,6 @@
             background-color: #f8fbff;
             scroll-margin-top: 90px;
         }
-        .notice-section {
-            border: 1px solid #ff9898;
-            background-color: #fff2f2;
-        }
-        .notice-section h2 {
-            color: #c82423;
-            border-left-color: #e64343;
-            scroll-margin-top: 90px;
-        }
         .section h2 {
             color: #2b5cb8;
             font-size: 20px;
@@ -169,12 +160,6 @@
             height: 48px;
             border-radius: 6px;
             object-fit:contain;
-        }
-        .sub-title {
-            margin-top: 18px;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #2b5cb8;
         }
         .board-section {
             border: 1px solid #c9d8f5;
@@ -275,6 +260,55 @@
             height: auto;
             min-width: 560px;
         }
+        /* 指令生成器样式 */
+        .cmd-form-row{
+            margin:10px 0;
+            display:flex;
+            gap:8px;
+            flex-wrap:wrap;
+            align-items:center;
+        }
+        .cmd-form-row label{
+            min-width:110px;
+            font-weight:bold;
+        }
+        .cmd-form-row input,.cmd-form-row select{
+            padding:6px 8px;
+            border:1px solid #bcd0ee;
+            border-radius:6px;
+            font-size:14px;
+            flex:1;
+            min-width:180px;
+        }
+        .cmd-hidden{
+            display:none;
+        }
+        .cmd-output{
+            background:#0b1428;
+            color:#72ff9c;
+            font-family:Consolas,monospace;
+            padding:14px;
+            border-radius:8px;
+            margin:14px 0;
+            white-space:pre-wrap;
+            word-break:break-all;
+        }
+        .btn-copy{
+            background:#2b5cb8;
+            color:#fff;
+            border:none;
+            padding:7px 16px;
+            border-radius:6px;
+            cursor:pointer;
+        }
+        .btn-copy:active{
+            background:#1f4796;
+        }
+        .cmd-highlight{
+            background:#fff1cc;
+            padding:2px 4px;
+            border-radius:3px;
+        }
     </style>
 </head>
 <body>
@@ -282,12 +316,13 @@
     <div class="nav-wrap">
         <a href="#top">🔝回到顶部</a>
         <a href="#boards">📊排行榜看板</a>
-        <a href="#subsidy">🥛萌新银币补贴</a>
+        <a href="#subsidy">🥛萌新萌新补贴</a>
         <a href="#chapter1">📖币种基础</a>
         <a href="#chapter2">🥈翻斗银币</a>
         <a href="#chapter3">🪙翻斗金币</a>
         <a href="#chapter4">💎翻斗钻币</a>
         <a href="#sponsorItemPool">🎁赞助道具池</a>
+        <a href="#cmdBuilder">🔧指令生成器</a>
         <a href="#chapter5">📟机器人指令</a>
         <a href="#chapter6">⚖️统一规则</a>
         <a href="#pageBottom">👇页面末尾</a>
@@ -398,7 +433,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;门槛：低于 100 分不计奖励（即 100 分起算）<br>
             &nbsp;&nbsp;&nbsp;&nbsp;发放币种：银币账户成员发放<strong>银币</strong></p>
         <h3>银币兑换池 — 副本委托兑换</h3>
-        <p class="tip-text">💡代购优惠说明：原价3.6折代购可用银币或金币抵扣现金，抵扣后最低不低于3.2折。举个例子就是原本1w点券的东西3.6折代购就是36元，可以用账户里的银币或者金币抵扣现金，最低3.2折，也就是如果你的银币金币余额足够，可以以3.2折拿下这1w点券的东西付32元，优惠4元就是抵扣的部分。发起代购委托时备注必须写明找谁代购优惠。</p>
+        <p class="tip-text">💡代购优惠说明：原价3.6折代购可用银币或金币抵扣现金，抵扣后最低不低于3.2折。举个例子就是原本1w点券的东西3.6折代购就是36元，可以用账户里的银币或者金币抵扣现金，最低3.2折，也就是如果你的银币金币余额足够，可以以3.2折拿下这1w点券的东西付32元，优惠4元就是抵扣的部分。发起委托时备注必须写明找谁代购优惠。</p>
         <div class="exchange-table-wrap">
             <table class="exchange-table">
                 <thead>
@@ -442,7 +477,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;门槛：低于 100 分不计奖励（即 100 分起算）<br>
             &nbsp;&nbsp;&nbsp;&nbsp;发放币种：金币账户成员发放<strong>金币</strong></p>
         <h3>金币兑换池 — 副本委托兑换</h3>
-        <p class="tip-text">💡代购优惠说明：原价3.6折代购可用银币或金币抵扣现金，抵扣后最低不低于3.2折。举个例子就是原本1w点券的东西3.6折代购就是36元，可以用账户里的银币或者金币抵扣现金，最低3.2折，也就是如果你的银币金币余额足够，可以以3.2折拿下这1w点券的东西付32元，优惠4元就是抵扣的部分。发起代购委托时备注必须写明找谁代购优惠。</p>
+        <p class="tip-text">💡代购优惠说明：原价3.6折代购可用银币或金币抵扣现金，抵扣后最低不低于3.2折。举个例子就是原本1w点券的东西3.6折代购就是36元，可以用账户里的银币或者金币抵扣现金，最低3.2折，也就是如果你的银币金币余额足够，可以以3.2折拿下这1w点券的东西付32元，优惠4元就是抵扣的部分。发起委托时备注必须写明找谁代购优惠。</p>
         <div class="exchange-table-wrap">
             <table class="exchange-table">
                 <thead>
@@ -479,13 +514,182 @@
         <p class="tip-text">&nbsp;&nbsp;&nbsp;&nbsp;举例：D带E通关噩梦邪焰王城月本，本次消耗E的15金币，则D获得15钻币。</p>
         <p class="tip-text">钻币发放规则后续可由管理组继续补充公示。</p>
     </div>
-
-    <!-- 新增独立赞助道具兑换池模块 -->
     <div class="section" id="sponsorItemPool">
         <h2>🎁 赞助道具兑换池</h2>
-        <p class="tip-text">下面为当前可兑换赞助道具清单，数据由csv导出自动生成。配图由前端道具名称映射匹配。</p>
+        <p class="tip-text">下面为当前可兑换赞助道具清单。</p>
         <div class="exchange-table-wrap" id="sponsorItemTableWrap">
             <!-- JS动态渲染表格 -->
+        </div>
+    </div>
+
+    <!-- 🔧交互式指令生成器模块 -->
+    <div class="section" id="cmdBuilder">
+        <h2>🔧 交互式指令生成器</h2>
+        <p class="tip-text">选择类型、填写信息，自动生成机器人指令，点击复制后发送到QQ群供机器人识别。<span class="cmd-highlight">⚠️标记为高频常用指令</span></p>
+        <div class="cmd-form-row">
+            <label for="cmdModeSel">功能模式：</label>
+            <select id="cmdModeSel">
+                <option value="">--请选择功能--</option>
+                <option value="queryAccount">👤账户查询（查账户/查余额） ⚠️</option>
+                <option value="reqCopy">📝求带副本·发起委托 ⚠️</option>
+                <option value="reqGoods">🎁道具兑换</option>
+                <option value="manageCancel">❌取消委托 ⚠️</option>
+                <option value="manageList">📋查询委托列表 ⚠️</option>
+                <option value="manageTake">✅带别人副本·领取报酬 ⚠️</option>
+                <option value="queryStock">📦查询全部道具库存 ⚠️</option>
+                <option value="queryItemPrice">🔍查单个道具定价</option>
+                <option value="querySponsor">📜查QQ赞助记录</option>
+                <option value="queryExchange">📜查QQ兑换流水</option>
+                <option value="queryBatch">📜查询赞助批次</option>
+                <option value="queryFlow">📊道具流向对账 ⚠️</option>
+            </select>
+        </div>
+
+        <div id="panelReqCopy" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="cbRole">角色名：</label>
+                <input type="text" id="cbRole" placeholder="填写你的游戏角色名">
+            </div>
+            <div class="cmd-form-row">
+                <label for="cbDungeon">副本名称：</label>
+                <select id="cbDungeon">
+                    <option value="冰封雪域">冰封雪域（英雄冰雪）</option>
+                    <option value="唤季逐灵">唤季逐灵（英雄蛇本）</option>
+                    <option value="噩梦焦土废墟">噩梦焦土废墟</option>
+                    <option value="英雄焦土废墟">英雄焦土废墟</option>
+                    <option value="噩梦团队协作">噩梦团队协作(老团)</option>
+                    <option value="双人秘境 560 分">双人秘境 560 分</option>
+                    <option value="双人秘境 580 分">双人秘境 580 分</option>
+                    <option value="噩梦邪焰王城月本">噩梦邪焰王城月本</option>
+                    <option value="噩梦黑暗绝境月本核心队伍">噩梦黑暗绝境月本核心队伍</option>
+                    <option value="噩梦黑暗绝境月本辅助队伍">噩梦黑暗绝境月本辅助队伍</option>
+                </select>
+            </div>
+            <!-- 新增备注栏 -->
+            <div class="cmd-form-row">
+                <label for="cbRemark">备注(选填)：</label>
+                <input type="text" id="cbRemark" placeholder="可填写指定给谁接，防止其他人误接">
+            </div>
+        </div>
+
+
+        <div id="panelReqGoods" class="cmd-hidden">
+            <p class="tip-text warn-text">⚠️生成后复制指令发给管理员QQ：<strong>3165575739</strong>进行道具兑换</p>
+            <div class="cmd-form-row">
+                <label for="gdQq">兑换QQ：</label>
+                <input type="text" id="gdQq" placeholder="要兑换的QQ号码">
+            </div>
+            <div class="cmd-form-row">
+                <label for="gdRole">兑换角色名：</label>
+                <input type="text" id="gdRole" placeholder="角色名称">
+            </div>
+            <div class="cmd-form-row">
+                <label for="gdItemSel">道具名称：</label>
+                <select id="gdItemSel">
+                    <option value="魔玉晶石">魔玉晶石</option>
+                    <option value="灵晶">灵晶</option>
+                    <option value="魂晶">魂晶</option>
+                    <option value="盛牡丹·普通">盛牡丹·普通</option>
+                </select>
+            </div>
+            <div class="cmd-form-row">
+                <label for="gdNum">兑换数量：</label>
+                <input type="text" id="gdNum" placeholder="数字">
+            </div>
+            <div class="cmd-form-row">
+                <label for="gdCoinSel">币种：</label>
+                <select id="gdCoinSel">
+                    <option value="银币">银币</option>
+                    <option value="金币">金币</option>
+                </select>
+            </div>
+            <div class="cmd-form-row">
+                <label for="gdRemark">备注(选填)：</label>
+                <input type="text" id="gdRemark" placeholder="补充备注信息，留空可不填">
+            </div>
+        </div>
+
+        <div id="panelCancel" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="cancelId">委托ID：</label>
+                <input type="text" id="cancelId" placeholder="数字委托ID">
+            </div>
+        </div>
+
+        <div id="panelTakeReward" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="takeRole">带队者角色名：</label>
+                <input type="text" id="takeRole" placeholder="带队的角色名称">
+            </div>
+            <div class="cmd-form-row">
+                <label for="takeId">委托ID：</label>
+                <input type="text" id="takeId" placeholder="委托ID数字">
+            </div>
+        </div>
+
+        <div id="panelItemPrice" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="priceItemSel">道具名称：</label>
+                <select id="priceItemSel">
+                    <option value="魔玉晶石">魔玉晶石</option>
+                    <option value="灵晶">灵晶</option>
+                    <option value="魂晶">魂晶</option>
+                    <option value="盛牡丹·普通">盛牡丹·普通</option>
+                </select>
+            </div>
+        </div>
+        <div id="panelSponsorQq" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="spQq">QQ号：</label>
+                <input type="text" id="spQq" placeholder="待查询QQ">
+            </div>
+        </div>
+        <div id="panelExchangeQq" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="exQq">QQ号：</label>
+                <input type="text" id="exQq" placeholder="待查询QQ">
+            </div>
+        </div>
+        <div id="panelBatchId" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="batchId">批次ID：</label>
+                <input type="text" id="batchId" placeholder="批次ID">
+            </div>
+        </div>
+        <div id="panelFlowItem" class="cmd-hidden">
+            <div class="cmd-form-row">
+                <label for="flowItemSel">道具名称：</label>
+                <select id="flowItemSel">
+                    <option value="魔玉晶石">魔玉晶石</option>
+                    <option value="灵晶">灵晶</option>
+                    <option value="魂晶">魂晶</option>
+                    <option value="盛牡丹·普通">盛牡丹·普通</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="cmd-output" id="cmdOut">--生成的指令将显示在这里--</div>
+        <button class="btn-copy" id="copyBtn">📋复制指令</button>
+
+        <div style="margin-top:20px;">
+            <h3>📑全部普通用户指令清单（参考）</h3>
+            <div class="command-block">
+                <p><span class="cmd-highlight">⚠️</span>查账户 / 查余额 / 查询账户 / 查询余额 — 查看自己余额 + 角色归类清单</p>
+                <p><span class="cmd-highlight">⚠️</span>发起委托‑角色名‑副本名称 — 发布副本带躺委托</p>
+                <p><span class="cmd-highlight">⚠️</span>发起委托‑角色名‑代购优惠_银币‑币数量‑备注（找谁代购） —自定义银币代购委托</p>
+                <p><span class="cmd-highlight">⚠️</span>发起委托‑角色名‑代购优惠_金币‑币数量‑备注（找谁代购） —自定义金币代购委托</p>
+                <p>查询委托 — 查询自己发布的待接单委托</p>
+                <p><span class="cmd-highlight">⚠️</span>取消委托‑委托ID — 取消自己的委托，币原路返还</p>
+                <p><span class="cmd-highlight">⚠️</span>查询委托列表 — 查看全部公开待接单委托</p>
+                <p><span class="cmd-highlight">⚠️</span>领取报酬‑带队者的角色名‑委托ID — 接别人委托，获取报酬</p>
+                <p>查道具价‑道具名称 — 查询道具定价</p>
+                <p><span class="cmd-highlight">⚠️</span>查库存 / 查道具 / 查询道具 / 查询库存 / 查道具库存 / 查询道具库存 — 查询全部已启用道具库存和定价</p>
+                <p>查赞助‑QQ号 — 查询QQ赞助记录</p>
+                <p>查兑换‑QQ号 — 查询QQ兑换流水</p>
+                <p>查批次‑批次ID — 查询赞助批次详情</p>
+                <p><span class="cmd-highlight">⚠️</span>查流向‑道具名称 — 道具流向对账</p>
+                <p>道具兑换‑兑换QQ‑兑换角色名‑道具名称‑兑换数量‑币种‑备注(选填) — 执行道具兑换</p>
+            </div>
         </div>
     </div>
 
@@ -536,10 +740,8 @@
     </div>
 </div>
 
-<!--加载外部榜单&道具数据JS文件-->
 <script src="./data-output.js"></script>
 <script>
-    // =========道具名称 — 图片文件名映射，新增道具在这里补充即可=========
     const ITEM_IMAGE_MAP = {
         "魔玉晶石":"魔玉晶石.png",
         "灵晶":"灵晶.png",
@@ -580,14 +782,13 @@
         { key: 'gold',    anchor: '#boardGold',    title: '翻斗金币排行榜', coinLabel: '金币余额' }
     ];
     const state = { diamond: null, sponsor: null, silver: null, gold: null };
+
     function fmtNum(v) {
         const n = Number(v) || 0;
         return n.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
-    // 道具单价格式化：最多展示6位小数，自动剔除尾部多余0，不补0
     function fmtItemPrice(v){
         const n = Number(v)||0;
-        // 最多保留6位小数，转字符串自动去掉末尾无效0
         return Number(n.toFixed(6)).toString();
     }
 
@@ -617,9 +818,7 @@
         return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
     function renderEmpty(key) {
-        const tip = key==='sponsor'
-            ?'暂无赞助池数据'
-            :'暂无榜单数据';
+        const tip = key==='sponsor'?'暂无赞助池数据':'暂无榜单数据';
         return '<div class="board-empty">'+tip+'</div>';
     }
     function renderTable(data) {
@@ -638,9 +837,7 @@
     }
     function getMaxBalance(rows){
         let m = 0;
-        for(const item of rows){
-            if(item.balance > m) m = item.balance;
-        }
+        for(const item of rows){ if(item.balance>m) m=item.balance; }
         return m;
     }
     function niceMax(v){
@@ -667,34 +864,33 @@
         const x = v => labelW + (v/maxV)*plotW;
         const ticks = 5;
         const randId = Math.random().toString(36).slice(2,7);
-        let svg = '<svg class="chart-svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMin meet" role="img" aria-label="'+escapeHtml(title)+'">';
-        svg += '<defs><linearGradient id="barGrad_'+randId+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4f8ef7" /><stop offset="100%" stop-color="#1d4ed8" /></linearGradient></defs>';
-        svg += '<text x="'+(W/2)+'" y="32" text-anchor="middle" font-size="22" font-weight="bold" fill="#20406f">'+escapeHtml(title)+'</text>';
-        svg += '<text x="'+(W/2)+'" y="58" text-anchor="middle" font-size="13" fill="#6b7a99">'+escapeHtml(unitLabel)+'</text>';
+        let svg = `<svg class="chart-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMin meet" role="img" aria-label="${escapeHtml(title)}">`;
+        svg += `<defs><linearGradient id="barGrad_${randId}" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4f8ef7" /><stop offset="100%" stop-color="#1d4ed8" /></linearGradient></defs>`;
+        svg += `<text x="${W/2}" y="32" text-anchor="middle" font-size="22" font-weight="bold" fill="#20406f">${escapeHtml(title)}</text>`;
+        svg += `<text x="${W/2}" y="58" text-anchor="middle" font-size="13" fill="#6b7a99">${escapeHtml(unitLabel)}</text>`;
         for(let t=0;t<=ticks;t++){
             const v = (maxV/ticks)*t;
             const px = x(v);
-            svg += '<line x1="'+px+'" y1="'+(padTop-16)+'" x2="'+px+'" y2="'+(padTop+n*rowH)+'" stroke="#e3eaf4" stroke-width="1" />';
-            svg += '<text x="'+px+'" y="'+(padTop-22)+'" text-anchor="middle" font-size="12" fill="#8894a8">'+v.toFixed(2)+'</text>';
+            svg += `<line x1="${px}" y1="${padTop-16}" x2="${px}" y2="${padTop+n*rowH}" stroke="#e3eaf4" stroke-width="1" />`;
+            svg += `<text x="${px}" y="${padTop-22}" text-anchor="middle" font-size="12" fill="#8894a8">${v.toFixed(2)}</text>`;
         }
         rows.forEach((r,i)=>{
             const y = padTop + i*rowH;
             const bh = rowH - 8;
             const w = Math.max(1, x(r.balance)-labelW);
-            svg += '<rect x="'+labelW+'" y="'+(y+2)+'" width="'+w+'" height="'+bh+'" fill="url(#barGrad_'+randId+')" rx="1" />';
-            svg += '<text x="'+(labelW-10)+'" y="'+(y+bh/2+2)+'" text-anchor="end" font-size="13" fill="#1f2937">'+escapeHtml(r.name)+'</text>';
-            svg += '<text x="'+(labelW+w+8)+'" y="'+(y+bh/2+2)+'" font-size="13" fill="#1f2937" font-weight="bold">'+r.balance.toFixed(2)+'</text>';
+            svg += `<rect x="${labelW}" y="${y+2}" width="${w}" height="${bh}" fill="url(#barGrad_${randId})" rx="1" />`;
+            svg += `<text x="${labelW-10}" y="${y+bh/2+2}" text-anchor="end" font-size="13" fill="#1f2937">${escapeHtml(r.name)}</text>`;
+            svg += `<text x="${labelW+w+8}" y="${y+bh/2+2}" font-size="13" fill="#1f2937" font-weight="bold">${fmtNum(r.balance)}</text>`;
         });
-        svg += '<line x1="'+labelW+'" y1="'+(padTop-16)+'" x2="'+labelW+'" y2="'+(padTop+n*rowH)+'" stroke="#b9c7dc" stroke-width="1" />';
+        svg += `<line x1="${labelW}" y1="${padTop-16}" x2="${labelW}" y2="${padTop+n*rowH}" stroke="#b9c7dc" stroke-width="1" />`;
         if(iconFileName){
             const imgSrc = "./data-output/" + iconFileName;
-            svg += '<image href="'+escapeHtml(imgSrc)+'" x="'+(W-70)+'" y="'+(H-42)+'" width="36" height="36" />';
+            svg += `<image href="${escapeHtml(imgSrc)}" x="${W-70}" y="${H-42}" width="36" height="36" />`;
         }
         svg += '</svg>';
         return '<div class="chart-box">'+svg+'</div>';
     }
 
-    // 渲染赞助道具池表格：道具名称匹配ITEM_IMAGE_MAP映射图片
     function renderSponsorItemTable(){
         const wrapDom = document.getElementById("sponsorItemTableWrap");
         if(!wrapDom) return;
@@ -703,32 +899,19 @@
             wrapDom.innerHTML = '<div class="board-empty">暂无赞助道具数据</div>';
             return;
         }
-        let html = `<table class="exchange-table">
-        <thead>
-            <tr>
-                <th>道具名称</th>
-                <th>俗称</th>
-                <th>配图</th>
-                <th>兑换币种</th>
-                <th>单价</th>
-                <th>当前库存</th>
-            </tr>
-        </thead>
-        <tbody>`;
+        let html = `<table class="exchange-table"><thead><tr><th>道具名称</th><th>俗称</th><th>配图</th><th>兑换币种</th><th>单价</th><th>当前库存</th></tr></thead><tbody>`;
         for(const it of itemList){
             let imgHtml = '';
-            const imgName = ITEM_IMAGE_MAP[it.itemName];
-            if(imgName){
-                imgHtml = `<img src="img/${escapeHtml(imgName)}" alt="${escapeHtml(it.itemName)}">`;
-            }
+            const imgName = ITEM_IMAGE_MAP[it.itemName||''];
+            if(imgName){ imgHtml = `<img src="img/${escapeHtml(imgName)}" alt="${escapeHtml(it.itemName||'')}">`; }
+            const aliasVal = it.alias ?? '';
             html += `<tr>
-                <td>${escapeHtml(it.itemName)}</td>
-                <td>${escapeHtml(it.alias)}</td>
+                <td>${escapeHtml(it.itemName||'')}</td>
+                <td>${escapeHtml(aliasVal)}</td>
                 <td>${imgHtml}</td>
-                <td>${escapeHtml(it.coinType)}</td>
+                <td>${escapeHtml(it.coinType||'')}</td>
                 <td>${fmtItemPrice(it.price)}</td>
-
-                <td>${escapeHtml(String(it.stock))}</td>
+                <td>${escapeHtml(String(it.stock??0))}</td>
             </tr>`;
         }
         html += `</tbody></table>`;
@@ -751,53 +934,174 @@
                 meta.innerHTML = '数据源：内嵌数据 ' + (data ? '｜ 已加载 '+data.rows.length+' 条 ｜ 更新于 '+now.toLocaleString() : '｜ 无数据');
             }
         });
-        // 渲染道具池
         renderSponsorItemTable();
     }
-    // 图片路径批量替换
+
     document.querySelectorAll('img[data-src]').forEach(img=>{
         img.src = "img/" + img.dataset.src;
         img.onerror = function(){ this.style.visibility='hidden'; };
     });
-    // DOM解析完成立刻渲染，不等待图片全部加载完毕，解决后台标签页卡住
+
     document.addEventListener('DOMContentLoaded', ()=>{
         try {
-            console.time("全部渲染耗时");
-            console.time("buildRank钻石");
             state.diamond = buildRank({rows: RANK_DATA_INLINE.diamond.rows || []});
-            console.timeEnd("buildRank钻石");
-            console.time("buildRank银币");
             state.silver = buildRank({rows: RANK_DATA_INLINE.silver.rows || []});
-            console.timeEnd("buildRank银币");
-            console.time("buildRank金币");
             state.gold = buildRank({rows: RANK_DATA_INLINE.gold.rows || []});
-            console.timeEnd("buildRank金币");
-            console.time("buildRank赞助");
             state.sponsor = buildRank({rows: RANK_DATA_INLINE.sponsor.rows || []});
-            console.timeEnd("buildRank赞助");
-            console.time("renderAll");
             renderAll();
-            console.timeEnd("renderAll");
-            console.timeEnd("全部渲染耗时");
-        } catch(err){
-            console.error("渲染异常：", err);
-        }
+        } catch(err){ console.error(err); }
     });
-    // 兜底：极端情况下DOMContentLoaded没有触发，最多3秒强制执行渲染
+
     setTimeout(()=>{
         if (!state.diamond) {
-            console.warn("DOM事件未触发，执行兜底强制渲染");
             try{
                 state.diamond = buildRank({rows: RANK_DATA_INLINE.diamond.rows || []});
                 state.silver = buildRank({rows: RANK_DATA_INLINE.silver.rows || []});
                 state.gold = buildRank({rows: RANK_DATA_INLINE.gold.rows || []});
                 state.sponsor = buildRank({rows: RANK_DATA_INLINE.sponsor.rows || []});
                 renderAll();
-            }catch(e){
-                console.error("兜底渲染失败", e);
-            }
+            }catch(e){console.error(e);}
         }
     }, 3000);
+
+    // =========指令生成器完整逻辑=========
+    const modeSel = document.getElementById('cmdModeSel');
+    const outBox = document.getElementById('cmdOut');
+    const copyBtn = document.getElementById('copyBtn');
+    const panels = {
+        panelReqCopy: document.getElementById('panelReqCopy'),
+        panelReqGoods: document.getElementById('panelReqGoods'),
+        panelCancel: document.getElementById('panelCancel'),
+        panelTakeReward: document.getElementById('panelTakeReward'),
+        panelItemPrice: document.getElementById('panelItemPrice'),
+        panelSponsorQq: document.getElementById('panelSponsorQq'),
+        panelExchangeQq: document.getElementById('panelExchangeQq'),
+        panelBatchId: document.getElementById('panelBatchId'),
+        panelFlowItem: document.getElementById('panelFlowItem')
+    };
+
+    function hideAllPanels(){
+        for(let k in panels){
+            panels[k].classList.add('cmd-hidden');
+        }
+        updateOutput();
+    }
+
+    function updateOutput(){
+        const mode = modeSel.value;
+        let cmd = '';
+        switch(mode){
+            case 'queryAccount':
+                cmd = '查账户';
+                break;
+            case 'queryStock':
+                cmd = '查库存';
+                break;
+            case 'manageList':
+                cmd = '查询委托列表';
+                break;
+            case 'reqCopy':{
+                const role = document.getElementById('cbRole').value.trim();
+                const dungeon = document.getElementById('cbDungeon').value.trim();
+                const remark = document.getElementById('cbRemark').value.trim();
+                if(!role){ cmd='⚠️请填写角色名'; break; }
+                cmd = `发起委托-${role}-${dungeon}-备注(${remark||"无备注"})`;
+                break;
+            }
+
+            case 'reqGoods':{
+                const qq = document.getElementById('gdQq').value.trim();
+                const role = document.getElementById('gdRole').value.trim();
+                const item = document.getElementById('gdItemSel').value.trim();
+                const num = document.getElementById('gdNum').value.trim();
+                const coinSel = document.getElementById('gdCoinSel').value;
+                const remark = document.getElementById('gdRemark').value.trim();
+                if(!qq||!role||!item||!num){ cmd='⚠️兑换QQ、角色名、道具名称、兑换数量不能为空';break; }
+                cmd = `道具兑换-${qq}-${role}-${item}-${num}-${coinSel}-备注(${remark||"无备注"})`;
+                break;
+            }
+            case 'manageCancel':{
+                const cid = document.getElementById('cancelId').value.trim();
+                if(!cid){ cmd='⚠️请输入委托ID';break; }
+                cmd = `取消委托-${cid}`;
+                break;
+            }
+            case 'manageTake':{
+                const trole = document.getElementById('takeRole').value.trim();
+                const tid = document.getElementById('takeId').value.trim();
+                if(!trole||!tid){ cmd='⚠️角色名、委托ID不能为空';break; }
+                cmd = `领取报酬-${trole}-${tid}`;
+                break;
+            }
+            case 'queryItemPrice':{
+                const pitem = document.getElementById('priceItemSel').value.trim();
+                if(!pitem){ cmd='⚠️请选择道具名称';break; }
+                cmd = `查道具价-${pitem}`;
+                break;
+            }
+            case 'querySponsor':{
+                const sq = document.getElementById('spQq').value.trim();
+                if(!sq){ cmd='⚠️请输入QQ号';break; }
+                cmd = `查赞助-${sq}`;
+                break;
+            }
+            case 'queryExchange':{
+                const eq = document.getElementById('exQq').value.trim();
+                if(!eq){ cmd='⚠️请输入QQ号';break; }
+                cmd = `查兑换-${eq}`;
+                break;
+            }
+            case 'queryBatch':{
+                const bid = document.getElementById('batchId').value.trim();
+                if(!bid){ cmd='⚠️请输入批次ID';break; }
+                cmd = `查批次-${bid}`;
+                break;
+            }
+            case 'queryFlow':{
+                const fitem = document.getElementById('flowItemSel').value.trim();
+                if(!fitem){ cmd='⚠️请选择道具名称';break; }
+                cmd = `查流向-${fitem}`;
+                break;
+            }
+            default:
+                cmd = "--请上方选择功能模式--";
+        }
+        outBox.textContent = cmd;
+    }
+
+    modeSel.addEventListener('change',()=>{
+        hideAllPanels();
+        const m = modeSel.value;
+        switch(m){
+            case 'reqCopy': panels.panelReqCopy.classList.remove('cmd-hidden'); break;
+            case 'reqGoods': panels.panelReqGoods.classList.remove('cmd-hidden'); break;
+            case 'manageCancel': panels.panelCancel.classList.remove('cmd-hidden'); break;
+            case 'manageTake': panels.panelTakeReward.classList.remove('cmd-hidden'); break;
+            case 'queryItemPrice': panels.panelItemPrice.classList.remove('cmd-hidden'); break;
+            case 'querySponsor': panels.panelSponsorQq.classList.remove('cmd-hidden'); break;
+            case 'queryExchange': panels.panelExchangeQq.classList.remove('cmd-hidden'); break;
+            case 'queryBatch': panels.panelBatchId.classList.remove('cmd-hidden'); break;
+            case 'queryFlow': panels.panelFlowItem.classList.remove('cmd-hidden'); break;
+        }
+    });
+
+    document.querySelectorAll('#cmdBuilder input, #cmdBuilder select').forEach(el=>{
+        el.addEventListener('input', updateOutput);
+        el.addEventListener('change', updateOutput);
+    });
+
+    copyBtn.addEventListener('click', async ()=>{
+        const text = outBox.textContent;
+        try{
+            await navigator.clipboard.writeText(text);
+            alert("✅已复制到剪贴板：" + text);
+        }catch(err){
+            alert("❌复制失败，请手动复制框内文本");
+        }
+    });
+
+    hideAllPanels();
 </script>
 </body>
 </html>
+
