@@ -8,6 +8,11 @@
     <meta http-equiv="Expires" content="0" />
     <title>翻斗花园 · “弹路同行-舟济与共”激励系统总览</title>
     <style>
+        :root {
+            scroll-behavior: smooth;
+            scroll-padding-top: 96px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -94,7 +99,7 @@
             border-radius: 12px;
             padding: 20px;
             background-color: #f8fbff;
-            scroll-margin-top: 90px;
+
         }
         .section h2 {
             color: #2b5cb8;
@@ -102,7 +107,7 @@
             margin-bottom: 14px;
             border-left: 4px solid #447bdd;
             padding-left: 10px;
-            scroll-margin-top: 90px;
+            scroll-margin-top: 96px; /* 跳转锚点时，距离顶部留出导航栏高度 */
         }
         .section h3 {
             font-size: 17px;
