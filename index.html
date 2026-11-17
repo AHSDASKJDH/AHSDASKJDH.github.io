@@ -584,6 +584,13 @@
         const n = Number(v) || 0;
         return n.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
+    // 道具单价格式化：最多展示6位小数，自动剔除尾部多余0，不补0
+    function fmtItemPrice(v){
+        const n = Number(v)||0;
+        // 最多保留6位小数，转字符串自动去掉末尾无效0
+        return Number(n.toFixed(6)).toString();
+    }
+
     function shortName(roles) {
         const arr = String(roles || '').split(/[,，、]/).map(s => s.trim()).filter(Boolean);
         if (!arr.length) return '(未绑定角色)';
@@ -719,7 +726,8 @@
                 <td>${escapeHtml(it.alias)}</td>
                 <td>${imgHtml}</td>
                 <td>${escapeHtml(it.coinType)}</td>
-                <td>${fmtNum(it.price)}</td>
+                <td>${fmtItemPrice(it.price)}</td>
+
                 <td>${escapeHtml(String(it.stock))}</td>
             </tr>`;
         }
