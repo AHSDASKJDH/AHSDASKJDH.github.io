@@ -334,14 +334,14 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 1,
-      "stock": 11
+      "stock": 15
     },
     {
       "itemName": "翠玉碎片",
       "alias": "",
       "coinType": "银币",
       "price": 0.007,
-      "stock": 2400
+      "stock": 7800
     },
     {
       "itemName": "随机普通龙核礼包",
@@ -363,6 +363,13 @@ window.RANK_DATA_INLINE = {
       "coinType": "银币",
       "price": 0.0015,
       "stock": 0
+    },
+    {
+      "itemName": "魂晶",
+      "alias": "",
+      "coinType": "银币",
+      "price": 0.00025,
+      "stock": 53100
     },
     {
       "itemName": "魔玉晶石",
@@ -397,7 +404,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.007,
-      "stock": 2400
+      "stock": 7800
     },
     {
       "itemName": "魂印石",
@@ -405,6 +412,13 @@ window.RANK_DATA_INLINE = {
       "coinType": "金币",
       "price": 0.0015,
       "stock": 0
+    },
+    {
+      "itemName": "魂晶",
+      "alias": "",
+      "coinType": "金币",
+      "price": 0.00025,
+      "stock": 53100
     },
     {
       "itemName": "魔玉晶石",
