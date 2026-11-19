@@ -328,7 +328,7 @@
 <body>
 <div class="nav-fixed">
     <div class="nav-wrap">
-        <a href="#top">🔝回到顶部</a>
+
         <a href="#boards">📊排行榜看板</a>
         <a href="#subsidy">🥛萌新萌新补贴</a>
         <a href="#chapter1">📖币种基础</a>
@@ -339,7 +339,7 @@
         <a href="#cmdBuilder">🔧指令生成器</a>
 
         <a href="#chapter6">⚖️统一规则</a>
-        <a href="#pageBottom">👇页面末尾</a>
+
     </div>
 </div>
 <div class="container" id="top">
@@ -1125,11 +1125,6 @@
     document.querySelectorAll('.nav-wrap a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if(href === '#top') {
-                e.preventDefault();
-                window.scrollTo({top:0, behavior:'smooth'});
-                return;
-            }
             const target = document.querySelector(href);
             if(target) {
                 e.preventDefault();
@@ -1140,6 +1135,7 @@
             }
         })
     })
+
 
 </script>
 </body>
