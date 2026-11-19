@@ -215,7 +215,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（3）",
@@ -229,7 +229,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（5）",
@@ -257,28 +257,28 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（3）",
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（4）",
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（5）",
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（6）",
@@ -642,7 +642,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 7,
-      "stock": 3
+      "stock": 2
     },
     {
       "itemName": "纹章卷轴·衣服",
@@ -705,7 +705,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（3）",
@@ -719,7 +719,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（5）",
@@ -747,28 +747,28 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（3）",
       "alias": "",
       "coinType": "金币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（4）",
       "alias": "",
       "coinType": "金币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（5）",
       "alias": "",
       "coinType": "金币",
       "price": 0.3,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（6）",
@@ -1083,7 +1083,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 7,
-      "stock": 3
+      "stock": 2
     },
     {
       "itemName": "翠玉碎片",
