@@ -727,17 +727,24 @@
     }
 
     //动态渲染道具下拉，传入select的id
+    // 直接复用 RANK_DATA_INLINE.sponsorItems 生成下拉，不再依赖DICT_ITEMS
     function renderItemSelect(selectId){
         const sel = document.getElementById(selectId);
-        if(!sel || !window.DICT_ITEMS) return;
+        if(!sel || !window.RANK_DATA_INLINE || !Array.isArray(RANK_DATA_INLINE.sponsorItems)) return;
         sel.innerHTML = '';
-        DICT_ITEMS.forEach(it=>{
+        const itemSet = new Set();
+        // 从已经导出的赞助道具数组构建下拉选项，自动去重
+        RANK_DATA_INLINE.sponsorItems.forEach(it=>{
+            const name = it.itemName?.trim();
+            if(!name || itemSet.has(name)) return;
+            itemSet.add(name);
             const opt = document.createElement('option');
-            opt.value = it.value;
-            opt.textContent = it.label;
+            opt.value = name;
+            opt.textContent = name;
             sel.appendChild(opt);
         });
     }
+
 
     const ITEM_IMAGE_MAP = {
         "魔玉晶石":"魔玉晶石.png",
