@@ -533,18 +533,46 @@ window.RANK_DATA_INLINE = {
       "stock": 0
     },
     {
+      "itemName": "优秀的灵魂碎片",
+      "alias": "",
+      "coinType": "银币",
+      "price": 0.3,
+      "stock": 33
+    },
+    {
       "itemName": "传说符文印记",
       "alias": "",
       "coinType": "银币",
       "price": 0.5,
-      "stock": 0
+      "stock": 2
+    },
+    {
+      "itemName": "凌寒梅·普通",
+      "alias": "",
+      "coinType": "银币",
+      "price": 5,
+      "stock": 1
     },
     {
       "itemName": "卓越符文印记",
       "alias": "",
       "coinType": "银币",
       "price": 0.07,
-      "stock": 0
+      "stock": 642
+    },
+    {
+      "itemName": "君子竹·普通",
+      "alias": "",
+      "coinType": "银币",
+      "price": 5,
+      "stock": 1
+    },
+    {
+      "itemName": "娜迦护盾·精良",
+      "alias": "",
+      "coinType": "银币",
+      "price": 3,
+      "stock": 1
     },
     {
       "itemName": "战技碎片",
@@ -561,18 +589,25 @@ window.RANK_DATA_INLINE = {
       "stock": 800
     },
     {
+      "itemName": "普通的灵魂碎片",
+      "alias": "",
+      "coinType": "银币",
+      "price": 0.1,
+      "stock": 163
+    },
+    {
       "itemName": "暗夜之刃·精良",
       "alias": "",
       "coinType": "银币",
       "price": 3,
-      "stock": 0
+      "stock": 1
     },
     {
       "itemName": "法老权杖·精良",
       "alias": "",
       "coinType": "银币",
       "price": 3,
-      "stock": 0
+      "stock": 1
     },
     {
       "itemName": "灵元·风",
@@ -593,42 +628,49 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 57
+      "stock": 64
     },
     {
       "itemName": "精良二圣魔石",
       "alias": "",
       "coinType": "银币",
       "price": 2,
-      "stock": 2
+      "stock": 4
     },
     {
       "itemName": "精良单属性魔石",
       "alias": "",
       "coinType": "银币",
       "price": 1,
-      "stock": 0
+      "stock": 3
     },
     {
       "itemName": "精良四象魔石",
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 0
+      "stock": 9
     },
     {
       "itemName": "精良灵魂印记碎片",
       "alias": "",
       "coinType": "银币",
       "price": 0.5,
-      "stock": 15
+      "stock": 42
+    },
+    {
+      "itemName": "精良的灵魂碎片",
+      "alias": "",
+      "coinType": "银币",
+      "price": 0.5,
+      "stock": 1
     },
     {
       "itemName": "纹章卷轴·副手",
       "alias": "",
       "coinType": "银币",
       "price": 2,
-      "stock": 5
+      "stock": 4
     },
     {
       "itemName": "纹章卷轴·帽子",
@@ -691,7 +733,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.00015,
-      "stock": 30000
+      "stock": 80000
     },
     {
       "itemName": "2星精良巫师礼赞刻印（1）",
@@ -1034,14 +1076,35 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.5,
-      "stock": 0
+      "stock": 2
+    },
+    {
+      "itemName": "凌寒梅·普通",
+      "alias": "",
+      "coinType": "金币",
+      "price": 5,
+      "stock": 1
     },
     {
       "itemName": "卓越符文印记",
       "alias": "",
       "coinType": "金币",
       "price": 0.07,
-      "stock": 0
+      "stock": 642
+    },
+    {
+      "itemName": "君子竹·普通",
+      "alias": "",
+      "coinType": "金币",
+      "price": 5,
+      "stock": 1
+    },
+    {
+      "itemName": "娜迦护盾·精良",
+      "alias": "",
+      "coinType": "金币",
+      "price": 3,
+      "stock": 1
     },
     {
       "itemName": "星尘沙",
@@ -1055,14 +1118,14 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 3,
-      "stock": 0
+      "stock": 1
     },
     {
       "itemName": "法老权杖·精良",
       "alias": "",
       "coinType": "金币",
       "price": 3,
-      "stock": 0
+      "stock": 1
     },
     {
       "itemName": "灵元·风",
@@ -1076,7 +1139,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 2,
-      "stock": 5
+      "stock": 4
     },
     {
       "itemName": "纹章卷轴·武器",
@@ -1111,7 +1174,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.00015,
-      "stock": 30000
+      "stock": 80000
     }
   ]
 };
