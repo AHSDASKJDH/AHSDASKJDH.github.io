@@ -404,7 +404,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 2,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（6）",
@@ -446,7 +446,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 2,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（6）",
@@ -558,7 +558,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 7,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "卓越符文印记",
@@ -572,7 +572,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 7,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "娜迦护盾·精良",
@@ -635,7 +635,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.5,
-      "stock": 64
+      "stock": 50
     },
     {
       "itemName": "精良二圣魔石",
@@ -649,7 +649,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 2,
-      "stock": 3
+      "stock": 0
     },
     {
       "itemName": "精良四象魔石",
@@ -943,7 +943,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 2,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（6）",
@@ -985,7 +985,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 2,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（6）",
@@ -1090,7 +1090,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 7,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "卓越符文印记",
@@ -1104,7 +1104,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 7,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "娜迦护盾·精良",
