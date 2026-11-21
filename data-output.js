@@ -775,7 +775,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 8,
-      "stock": 2
+      "stock": 1
     },
     {
       "itemName": "纹章卷轴·衣服",
@@ -803,7 +803,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.8,
-      "stock": 10
+      "stock": 0
     },
     {
       "itemName": "魂印石",
@@ -1237,7 +1237,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 8,
-      "stock": 2
+      "stock": 1
     },
     {
       "itemName": "翠玉碎片",
