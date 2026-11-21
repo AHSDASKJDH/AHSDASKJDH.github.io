@@ -207,973 +207,980 @@ window.RANK_DATA_INLINE = {
       "itemName": "2星精良巫师礼赞刻印（1）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（2）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（3）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（4）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（5）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（6）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（1）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（2）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（3）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（4）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（5）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（6）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（1）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（2）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（3）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（4）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（5）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
+      "stock": 0
+    },
+    {
+      "itemName": "2星精良船长祝福刻印（6）",
+      "alias": "",
+      "coinType": "银币",
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（1）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 1
     },
     {
       "itemName": "2星精良虚空力量刻印（2）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（3）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（4）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（5）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（6）",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（1）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（2）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（3）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（4）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（5）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 1
     },
     {
       "itemName": "3星精良巫师礼赞刻印（6）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（1）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（2）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（3）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（4）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（5）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 1
     },
     {
       "itemName": "3星精良指挥艺术刻印（6）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（1）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（2）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（3）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（4）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（5）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（6）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（1）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 1
     },
     {
       "itemName": "3星精良虚空力量刻印（2）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（3）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（4）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（5）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（6）",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "优秀的灵魂碎片",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 33
     },
     {
       "itemName": "传说符文印记",
       "alias": "",
       "coinType": "银币",
-      "price": 0.5,
+      "price": 0.8,
       "stock": 2
     },
     {
       "itemName": "凌寒梅·普通",
       "alias": "",
       "coinType": "银币",
-      "price": 5,
+      "price": 7,
       "stock": 1
     },
     {
       "itemName": "卓越符文印记",
       "alias": "",
       "coinType": "银币",
-      "price": 0.07,
+      "price": 0.1,
       "stock": 642
     },
     {
       "itemName": "君子竹·普通",
       "alias": "",
       "coinType": "银币",
-      "price": 5,
+      "price": 7,
       "stock": 1
     },
     {
       "itemName": "娜迦护盾·精良",
       "alias": "",
       "coinType": "银币",
-      "price": 3,
+      "price": 5,
       "stock": 1
     },
     {
       "itemName": "战技碎片",
       "alias": "",
       "coinType": "银币",
-      "price": 0.005,
+      "price": 0.01,
       "stock": 2721
     },
     {
       "itemName": "星尘沙",
       "alias": "",
       "coinType": "银币",
-      "price": 0.02,
+      "price": 0.03,
       "stock": 800
     },
     {
       "itemName": "普通的灵魂碎片",
       "alias": "",
       "coinType": "银币",
-      "price": 0.1,
+      "price": 0.3,
       "stock": 163
     },
     {
       "itemName": "暗夜之刃·精良",
       "alias": "",
       "coinType": "银币",
-      "price": 3,
+      "price": 5,
       "stock": 1
     },
     {
       "itemName": "法老权杖·精良",
       "alias": "",
       "coinType": "银币",
-      "price": 3,
+      "price": 5,
       "stock": 1
     },
     {
       "itemName": "灵元·风",
       "alias": "",
       "coinType": "银币",
-      "price": 0.25,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "灵晶",
       "alias": "",
       "coinType": "银币",
-      "price": 0.0015,
+      "price": 0.002,
       "stock": 15900
     },
     {
       "itemName": "精良三冠魔石",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 64
     },
     {
       "itemName": "精良二圣魔石",
       "alias": "",
       "coinType": "银币",
-      "price": 2,
+      "price": 3,
       "stock": 4
     },
     {
       "itemName": "精良单属性魔石",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 3
     },
     {
       "itemName": "精良四象魔石",
       "alias": "",
       "coinType": "银币",
-      "price": 0.3,
+      "price": 1,
       "stock": 9
     },
     {
       "itemName": "精良灵魂印记碎片",
       "alias": "",
       "coinType": "银币",
-      "price": 0.5,
+      "price": 0.8,
       "stock": 42
     },
     {
       "itemName": "精良的灵魂碎片",
       "alias": "",
       "coinType": "银币",
-      "price": 0.5,
+      "price": 1,
       "stock": 1
     },
     {
       "itemName": "纹章卷轴·副手",
       "alias": "",
       "coinType": "银币",
-      "price": 2,
+      "price": 4,
       "stock": 4
     },
     {
       "itemName": "纹章卷轴·帽子",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 1.5,
       "stock": 12
     },
     {
       "itemName": "纹章卷轴·武器",
       "alias": "",
       "coinType": "银币",
-      "price": 7,
+      "price": 8,
       "stock": 2
     },
     {
       "itemName": "纹章卷轴·衣服",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 1.5,
       "stock": 15
     },
     {
       "itemName": "翠玉碎片",
       "alias": "",
       "coinType": "银币",
-      "price": 0.007,
+      "price": 0.01,
       "stock": 7800
     },
     {
       "itemName": "随机普通龙核礼包",
       "alias": "",
       "coinType": "银币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "随机普通龙纹礼包",
       "alias": "",
       "coinType": "银币",
-      "price": 0.5,
+      "price": 0.8,
       "stock": 10
     },
     {
       "itemName": "魂印石",
       "alias": "",
       "coinType": "银币",
-      "price": 0.0015,
+      "price": 0.002,
       "stock": 0
     },
     {
       "itemName": "魂晶",
       "alias": "",
       "coinType": "银币",
-      "price": 0.00025,
+      "price": 0.0003,
       "stock": 53100
     },
     {
       "itemName": "魔玉晶石",
       "alias": "",
       "coinType": "银币",
-      "price": 0.00015,
+      "price": 0.0002,
       "stock": 80000
     },
     {
       "itemName": "2星精良巫师礼赞刻印（1）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（2）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（3）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（4）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（5）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（6）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（1）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（2）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（3）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（4）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（5）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良指挥艺术刻印（6）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（1）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（2）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（3）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（4）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（5）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良船长祝福刻印（6）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（1）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 1
     },
     {
       "itemName": "2星精良虚空力量刻印（2）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（3）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（4）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（5）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（6）",
       "alias": "",
       "coinType": "金币",
-      "price": 0.3,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（1）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（2）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（3）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（4）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良巫师礼赞刻印（5）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 1
     },
     {
       "itemName": "3星精良巫师礼赞刻印（6）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（1）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（2）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（3）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（4）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良指挥艺术刻印（5）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 1
     },
     {
       "itemName": "3星精良指挥艺术刻印（6）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（1）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（2）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（3）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（4）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（5）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良船长祝福刻印（6）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（1）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 1
     },
     {
       "itemName": "3星精良虚空力量刻印（2）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（3）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（4）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（5）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "3星精良虚空力量刻印（6）",
       "alias": "",
       "coinType": "金币",
-      "price": 1,
+      "price": 2,
       "stock": 0
     },
     {
       "itemName": "传说符文印记",
       "alias": "",
       "coinType": "金币",
-      "price": 0.5,
+      "price": 0.8,
       "stock": 2
     },
     {
       "itemName": "凌寒梅·普通",
       "alias": "",
       "coinType": "金币",
-      "price": 5,
+      "price": 7,
       "stock": 1
     },
     {
       "itemName": "卓越符文印记",
       "alias": "",
       "coinType": "金币",
-      "price": 0.07,
+      "price": 0.1,
       "stock": 642
     },
     {
       "itemName": "君子竹·普通",
       "alias": "",
       "coinType": "金币",
-      "price": 5,
+      "price": 7,
       "stock": 1
     },
     {
       "itemName": "娜迦护盾·精良",
       "alias": "",
       "coinType": "金币",
-      "price": 3,
+      "price": 5,
       "stock": 1
     },
     {
       "itemName": "星尘沙",
       "alias": "",
       "coinType": "金币",
-      "price": 0.02,
+      "price": 0.03,
       "stock": 800
     },
     {
       "itemName": "暗夜之刃·精良",
       "alias": "",
       "coinType": "金币",
-      "price": 3,
+      "price": 5,
       "stock": 1
     },
     {
       "itemName": "法老权杖·精良",
       "alias": "",
       "coinType": "金币",
-      "price": 3,
+      "price": 5,
       "stock": 1
     },
     {
       "itemName": "灵元·风",
       "alias": "",
       "coinType": "金币",
-      "price": 0.25,
+      "price": 0.5,
       "stock": 0
     },
     {
       "itemName": "纹章卷轴·副手",
       "alias": "",
       "coinType": "金币",
-      "price": 2,
+      "price": 4,
       "stock": 4
     },
     {
       "itemName": "纹章卷轴·武器",
       "alias": "",
       "coinType": "金币",
-      "price": 7,
+      "price": 8,
       "stock": 2
     },
     {
       "itemName": "翠玉碎片",
       "alias": "",
       "coinType": "金币",
-      "price": 0.007,
+      "price": 0.01,
       "stock": 7800
     },
     {
       "itemName": "魂印石",
       "alias": "",
       "coinType": "金币",
-      "price": 0.0015,
+      "price": 0.002,
       "stock": 0
     },
     {
       "itemName": "魂晶",
       "alias": "",
       "coinType": "金币",
-      "price": 0.00025,
+      "price": 0.0003,
       "stock": 53100
     },
     {
       "itemName": "魔玉晶石",
       "alias": "",
       "coinType": "金币",
-      "price": 0.00015,
+      "price": 0.0002,
       "stock": 80000
     }
   ]
