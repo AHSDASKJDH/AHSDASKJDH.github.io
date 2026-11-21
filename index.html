@@ -323,6 +323,66 @@
             padding:2px 4px;
             border-radius:3px;
         }
+
+        /* ===== 赞助明细弹窗相关样式 ===== */
+        .detail-btn {
+            background: #e8f1ff;
+            color: #2b5cb8;
+            border: 1px solid #bcd0ee;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+        .detail-btn:hover {
+            background: #2b5cb8;
+            color: #fff;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #20406f;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            padding-right: 20px;
+        }
+        .modal-body {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        .modal-close {
+            position: absolute;
+            top: 16px; right: 20px;
+            font-size: 22px;
+            color: #999;
+            cursor: pointer;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .modal-close:hover { color: #d14343; }
     </style>
 </head>
 <body>
@@ -713,6 +773,17 @@
     </div>
 </div>
 
+<!-- 赞助明细弹窗容器 -->
+<div class="modal-overlay" id="sponsorModal">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeSponsorModal()">×</span>
+        <div class="modal-title" id="modalTitle">赞助明细</div>
+        <div class="modal-body" id="modalBody">
+            <!-- 内容由 JS 动态填入 -->
+        </div>
+    </div>
+</div>
+
 <script src="./data-output.js"></script>
 <script>
     // 动态渲染副本下拉
@@ -877,7 +948,8 @@
                 qq:r.qq,
                 balance:r.balance,
                 name:shortName(r.roles),
-                roles:fullRoles(r.roles)
+                roles:fullRoles(r.roles),
+                details: r.details || ''  // 保留 details 字段
             }));
         const total = rows.reduce((s,r)=>s+r.balance,0);
         return {rows,total};
@@ -889,16 +961,39 @@
         const tip = key==='sponsor'?'暂无赞助池数据':'暂无榜单数据';
         return '<div class="board-empty">'+tip+'</div>';
     }
-    function renderTable(data) {
-        const head = '<tr><th>排名</th><th>角色名</th><th>QQ</th><th>余额</th><th>角色名（全部）</th></tr>';
+    function renderTable(data, isSponsor) {
+        let head = '<tr><th>排名</th><th>角色名</th><th>QQ</th><th>' + (isSponsor ? '赞助价值' : '余额') + '</th>';
+        if (isSponsor) {
+            head += '<th>赞助明细</th>';
+        } else {
+            head += '<th>角色名（全部）</th>';
+        }
+        head += '</tr>';
+
         const rows = data.rows.map(r=>{
             const cls = r.rank<=3 ? ' class="rank-'+r.rank+'"' : '';
+
+            let lastCol = '';
+            if (isSponsor) {
+                if (r.details) {
+                    // 使用 encodeURIComponent 防止特殊字符导致 JS 报错
+                    const safeDetails = encodeURIComponent(r.details);
+                    const safeName = escapeHtml(r.name);
+                    // 把双引号替换掉，避免破坏 onclick 结构
+                    lastCol = `<button class="detail-btn" onclick="showSponsorModal('${safeName.replace(/'/g, "\\'")}', decodeURIComponent('${safeDetails}'))">查看明细</button>`;
+                } else {
+                    lastCol = '<span style="color:#999;font-size:12px;">无</span>';
+                }
+            } else {
+                lastCol = escapeHtml(r.roles);
+            }
+
             return '<tr'+cls+'>'
                 +'<td class="cell-rank">'+r.rank+'</td>'
                 +'<td class="cell-name">'+escapeHtml(r.name)+'</td>'
                 +'<td class="cell-qq">'+escapeHtml(r.qq)+'</td>'
                 +'<td class="cell-balance">'+fmtNum(r.balance)+'</td>'
-                +'<td class="cell-roles">'+escapeHtml(r.roles)+'</td>'
+                +'<td class="cell-roles">'+lastCol+'</td>'
                 +'</tr>';
         }).join('');
         return '<div class="rank-table-wrap"><table class="rank-table"><thead>'+head+'</thead><tbody>'+rows+'</tbody></table></div>';
@@ -993,7 +1088,8 @@
             const card = document.querySelector(b.anchor+' .board-body');
             const iconFile = (RANK_DATA_INLINE && RANK_DATA_INLINE[b.key]) ? RANK_DATA_INLINE[b.key].icon||'' : '';
             if(data && data.rows.length>0){
-                card.innerHTML = renderTable(data) + renderChart(data, b.title, b.coinLabel, iconFile);
+                // 【修改点】传入 b.key === 'sponsor' 作为第二参数
+                card.innerHTML = renderTable(data, b.key === 'sponsor') + renderChart(data, b.title, b.coinLabel, iconFile);
             }else{
                 card.innerHTML = renderEmpty(b.key);
             }
@@ -1004,6 +1100,25 @@
         });
         renderSponsorItemTable();
     }
+
+    // 弹窗打开和关闭的函数
+    function showSponsorModal(name, details) {
+        document.getElementById('modalTitle').innerText = name + ' 的赞助明细';
+        // 把顿号替换为换行，显示更美观
+        document.getElementById('modalBody').innerHTML = escapeHtml(details).replace(/、/g, '<br>');
+        document.getElementById('sponsorModal').style.display = 'flex';
+    }
+
+    function closeSponsorModal() {
+        document.getElementById('sponsorModal').style.display = 'none';
+    }
+
+    // 点击黑色背景也能关闭弹窗
+    document.getElementById('sponsorModal').addEventListener('click', function(e) {
+        if(e.target === this) {
+            closeSponsorModal();
+        }
+    });
 
     document.querySelectorAll('img[data-src]').forEach(img=>{
         img.src = "img/" + img.dataset.src;
@@ -1037,10 +1152,6 @@
             renderItemSelect('flowItemSel');
         }
     },1200);
-
-
-
-
 
     setTimeout(()=>{
         if (!state.diamond) {
@@ -1214,4 +1325,3 @@
 <a href="https://statpx.com" target="_blank" rel="noopener" style="font-size:12px;color:#94a3b8;text-decoration:none;display:inline-flex;align-items:center;gap:3px">Analytics by <strong style="color:#6366f1;font-weight:700">statpx</strong></a>
 </body>
 </html>
-
