@@ -12,12 +12,6 @@ window.RANK_DATA_INLINE = {
         "details": ""
       },
       {
-        "qq": "1394287165",
-        "balance": 6,
-        "roles": "豪情在天",
-        "details": ""
-      },
-      {
         "qq": "3165575739",
         "balance": 3,
         "roles": "顾之煜",
