@@ -737,7 +737,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.5,
-      "stock": 50
+      "stock": 57
     },
     {
       "itemName": "精良二圣魔石",
@@ -758,14 +758,14 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 1,
-      "stock": 9
+      "stock": 10
     },
     {
       "itemName": "精良灵魂印记碎片",
       "alias": "",
       "coinType": "银币",
       "price": 0.8,
-      "stock": 42
+      "stock": 72
     },
     {
       "itemName": "精良的灵魂碎片",
@@ -779,7 +779,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 4,
-      "stock": 4
+      "stock": 3
     },
     {
       "itemName": "纹章卷轴·帽子",
@@ -1248,7 +1248,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 4,
-      "stock": 4
+      "stock": 3
     },
     {
       "itemName": "纹章卷轴·武器",
