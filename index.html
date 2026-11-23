@@ -962,7 +962,7 @@
         return '<div class="board-empty">'+tip+'</div>';
     }
     function renderTable(data, isSponsor) {
-        let head = '<tr><th>排名</th><th>角色名</th><th>QQ</th><th>' + (isSponsor ? '赞助价值' : '余额') + '</th>';
+        let head = '<tr><th>排名</th><th>角色名</th><th>QQ</th><th>' + (isSponsor ? '赞助价值（非市价，仅参考）' : '余额') + '</th>';
         if (isSponsor) {
             head += '<th>赞助明细</th>';
         } else {
