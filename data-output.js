@@ -695,7 +695,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.03,
-      "stock": 800
+      "stock": 710
     },
     {
       "itemName": "普通的灵魂碎片",
@@ -730,7 +730,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.002,
-      "stock": 15900
+      "stock": 14900
     },
     {
       "itemName": "精良三冠魔石",
@@ -793,7 +793,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 8,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "纹章卷轴·衣服",
@@ -1220,7 +1220,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.03,
-      "stock": 800
+      "stock": 710
     },
     {
       "itemName": "暗夜之刃·精良",
@@ -1255,7 +1255,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 8,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "翠玉碎片",
