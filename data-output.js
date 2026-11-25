@@ -436,7 +436,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.5,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（2）",
@@ -688,7 +688,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.01,
-      "stock": 2721
+      "stock": 2051
     },
     {
       "itemName": "星尘沙",
@@ -842,7 +842,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.0002,
-      "stock": 80000
+      "stock": 0
     },
     {
       "itemName": "2星精良巫师礼赞刻印（1）",
@@ -975,7 +975,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.5,
-      "stock": 1
+      "stock": 0
     },
     {
       "itemName": "2星精良虚空力量刻印（2）",
@@ -1283,7 +1283,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.0002,
-      "stock": 80000
+      "stock": 0
     }
   ]
 };
