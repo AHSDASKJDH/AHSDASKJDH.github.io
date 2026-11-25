@@ -611,7 +611,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 2,
-      "stock": 0
+      "stock": 1
     },
     {
       "itemName": "3星精良虚空力量刻印（3）",
@@ -646,7 +646,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.5,
-      "stock": 33
+      "stock": 62
     },
     {
       "itemName": "传说符文印记",
@@ -695,14 +695,14 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.03,
-      "stock": 710
+      "stock": 1010
     },
     {
       "itemName": "普通的灵魂碎片",
       "alias": "",
       "coinType": "银币",
       "price": 0.3,
-      "stock": 163
+      "stock": 187
     },
     {
       "itemName": "暗夜之刃·精良",
@@ -719,6 +719,13 @@ window.RANK_DATA_INLINE = {
       "stock": 1
     },
     {
+      "itemName": "灵元·土",
+      "alias": "",
+      "coinType": "银币",
+      "price": 0.5,
+      "stock": 6
+    },
+    {
       "itemName": "灵元·风",
       "alias": "",
       "coinType": "银币",
@@ -730,14 +737,21 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.002,
-      "stock": 14900
+      "stock": 25580
+    },
+    {
+      "itemName": "稀有小啵咕天赋箱",
+      "alias": "",
+      "coinType": "银币",
+      "price": 0.005,
+      "stock": 3200
     },
     {
       "itemName": "精良三冠魔石",
       "alias": "",
       "coinType": "银币",
       "price": 0.5,
-      "stock": 57
+      "stock": 43
     },
     {
       "itemName": "精良二圣魔石",
@@ -793,7 +807,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 8,
-      "stock": 0
+      "stock": 2
     },
     {
       "itemName": "纹章卷轴·衣服",
@@ -808,6 +822,13 @@ window.RANK_DATA_INLINE = {
       "coinType": "银币",
       "price": 0.01,
       "stock": 7800
+    },
+    {
+      "itemName": "路瑟法天赋箱",
+      "alias": "",
+      "coinType": "银币",
+      "price": 0.002,
+      "stock": 9670
     },
     {
       "itemName": "随机普通龙核礼包",
@@ -842,7 +863,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "银币",
       "price": 0.0002,
-      "stock": 0
+      "stock": 92805
     },
     {
       "itemName": "2星精良巫师礼赞刻印（1）",
@@ -1150,7 +1171,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 2,
-      "stock": 0
+      "stock": 1
     },
     {
       "itemName": "3星精良虚空力量刻印（3）",
@@ -1220,7 +1241,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.03,
-      "stock": 710
+      "stock": 1010
     },
     {
       "itemName": "暗夜之刃·精良",
@@ -1237,11 +1258,25 @@ window.RANK_DATA_INLINE = {
       "stock": 1
     },
     {
+      "itemName": "灵元·土",
+      "alias": "",
+      "coinType": "金币",
+      "price": 0.5,
+      "stock": 6
+    },
+    {
       "itemName": "灵元·风",
       "alias": "",
       "coinType": "金币",
       "price": 0.5,
       "stock": 0
+    },
+    {
+      "itemName": "稀有小啵咕天赋箱",
+      "alias": "",
+      "coinType": "金币",
+      "price": 0.005,
+      "stock": 3200
     },
     {
       "itemName": "纹章卷轴·副手",
@@ -1255,7 +1290,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 8,
-      "stock": 0
+      "stock": 2
     },
     {
       "itemName": "翠玉碎片",
@@ -1263,6 +1298,13 @@ window.RANK_DATA_INLINE = {
       "coinType": "金币",
       "price": 0.01,
       "stock": 7800
+    },
+    {
+      "itemName": "路瑟法天赋箱",
+      "alias": "",
+      "coinType": "金币",
+      "price": 0.002,
+      "stock": 9670
     },
     {
       "itemName": "魂印石",
@@ -1283,7 +1325,7 @@ window.RANK_DATA_INLINE = {
       "alias": "",
       "coinType": "金币",
       "price": 0.0002,
-      "stock": 0
+      "stock": 92805
     }
   ]
 };
